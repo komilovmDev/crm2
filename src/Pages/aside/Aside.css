@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.Aside {
+    width: 256px;
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+}
+
+h3, p{
+    padding: 0;
+    margin: 0;
+}
+
+.MenuLefticon {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 22px;
+    color:#C2CFE0;
+}
+
+
+.MenuLeftText p {
+    font-size: .7vw; 
+    color:#90A0B7;
+}
+
+.MenuLeftText h3 {
+    font-size: 16px;
+}
+
+.MenuLeftLogo {
+    width: 100%;
+    display: flex;
+    align-items:center;
+    padding: 0 40px;
+}
+
+.MenuLeft { 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 30px;
+    align-items:flex-start;
+    width: 256px;
+    height: 96vh;
+    padding: 20px 0;
+    border-right: 1 solid #EBEFF2;
+}
+
+.MenuLeftUser {
+    width: 100%;
+    padding: 0 2vw;
+    display: flex;
+    align-items:center;
+    gap: 1vw;
+}
+
+.MenuLeftButtons {
+    margin-left: 1vw;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #EBEFF2;
+}
+
+.MenuLeftButtons a {
+    text-decoration: none;
+}
+ 
+
+.MenuButton { 
+    width: 180px;
+    height: 40px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    padding: 0 20px;
+    gap: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.MenuButton p{  
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    color: #334D6E;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: all .3s ease;
+}
+
+
+.MenuButton:hover {
+    box-shadow:0 0 15px rgba(0, 0, 0, 0.11);
+    border-radius: 10px;
+}
+.MenuButton:hover p,
+.MenuButton:hover .imgiconbox{
+    color:#109CF1;
+}
+ 
+
+.MenuButton.active {
+    background-color:#005EEB;
+    border-radius: 10px;
+}
+
+.MenuButton.active p{ 
+    color: #fff;
+}
+
+.MenuButton.active .imgiconbox{ 
+    color: #fff;
+}
+
+.MenuButton.active:hover p{
+    color:  white ;
+}
+
+.MenuButton.active:hover .imgiconbox {
+    color: white;
+}
+
+.imgiconbox {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items:center;
+    color:#C2CFE0;
+    transition: all .3s ease;
+}
+
+
+.ContentRight {
+    width: 80%;
+}
+
+.settongButtonBox {
+    display: flex;
+    justify-content: center;
+}

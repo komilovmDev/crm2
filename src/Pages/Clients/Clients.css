@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.Client {
+    font-family: "Poppins", sans-serif;
+}
+
+
+.ButtonsHronical button {
+    width: 110px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #90A0B7;
+    background: none;
+    padding-bottom: 10px;
+    color: #90A0B7;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.ButtonsHronical button:focus,
+.ButtonsHronical button:hover {
+    color: #005EEB;
+    border-bottom: 1px solid #005EEB;
+}
+
+.Nomber {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Nomber p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+.Id {
+    width: 50px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.Id p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.Name {
+    width: 150px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.Name p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.Points {
+    width: 95px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.Points p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.Lesson {
+    width: 165px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.Lesson p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.Status {
+    width: 70px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.Status p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.Study {
+    width: 100px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.Study p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.Phone {
+    width: 130px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.Phone p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.Balance {
+    width: 137px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Balance p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+
+.ClientTable {
+    width: 99.8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    height: 650px;
+    overflow-y: auto;
+}
+
+.GlavTable {
+    min-height: 60px;
+}
+
+.ClientTable::-webkit-scrollbar {
+    width: 15px;
+    padding: 1px;
+    border-radius: 38px;
+    border: 1px solid #E4EAF1;
+    background-color: #F6FAFF;
+}
+
+.ClientTable::-webkit-scrollbar-track {
+    background: orange;
+    border-radius: 38px;
+    border: 1px solid #E4EAF1;
+    background-color: #F6FAFF;
+}
+
+.ClientTable::-webkit-scrollbar-thumb {
+    background-color: #B0C2DA;
+    border-radius: 38px;
+    border: 4px solid #F6FAFF;
+}
+
+.Previus {
+    width: 140px;
+    height: 32px;
+    border: 1px solid #707683;
+    color: #707683;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    gap: 5px;
+    background: none;
+    cursor: pointer;
+}
+
+.Next {
+    width: 140px;
+    height: 32px;
+    border: 1px solid #707683;
+    color: #707683;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    gap: 5px;
+    background: none;
+    cursor: pointer;
+}
+
+.Selected_button {
+    width: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.Bottom_Button {
+    width: auto;
+}
+
+.number_button {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #707683;
+    border: 1px solid #707683;
+    border-radius: 8px;
+    background: none;
+}
+
+.FiltersContent {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.FiltersContent button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 8px;
+    border: 1px solid #C2CFE0;
+    outline: none;
+    background: #FFFFFF;
+    color: #90A0B7;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.FiltersContent button:hover {
+    color: black;
+    border: 1px solid black;
+}
+
+
+.FiltersContent button span {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#reset {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #005EEB;
+    color: #005EEB;
+    font-size: 16px;
+}
+
+#reset:hover {
+    background: #005EEB;
+    color: white;
+}
+
+.ModalText {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    gap: 5px;
+}
+
+.ModalText h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    font-weight: 700;
+    color: #334D6E;
+}
+
+.ModalText p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #90A0B7;
+    line-height: 18.9px;
+}
+
+.ModalButton {
+    margin-top: 22px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.AddNewStudent {
+    width: 210px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #DFE0E4;
+    border-radius: 6px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.AddNewStudent:hover {
+    width: 210px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #005EEB;
+    border-radius: 6px;
+    gap: 10px;
+}
+
+.IconNewStud {
+    font-size: 20px;
+    color: #33A9FF;
+}
+
+.AddNewStudText {
+    display: flex;
+    flex-direction: column;
+}
+
+.AddNewStudText h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    font: General Sans;
+    font-family: "Poppins", sans-serif;
+}
+
+.AddNewStudText p {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color: #192A3E;
+    line-height: 13.5px;
+    font: General Sans;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.AddNewCustomer {
+    width: 210px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #DFE0E4;
+    border-radius: 6px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.AddNewCustomer:hover {
+    width: 210px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #005EEB;
+    border-radius: 6px;
+    gap: 10px;
+} 
+
+.IconNewCust {
+    font-size: 20px;
+    color: #33A9FF;
+}
+
+.AddNewCustText {
+    display: flex;
+    flex-direction: column;
+}
+
+.AddNewCustText h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    font: General Sans;
+    font-family: "Poppins", sans-serif;
+}
+
+.AddNewCustText p {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color: #192A3E;
+    line-height: 13.5px;
+    font: General Sans;
+    font-family: "Poppins", sans-serif;
+}
+
+.closeNewStud {
+    border: none;
+    background: none;
+    color: #C2CFE0;
+    font-size: 24px;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    cursor: pointer;
+
+}
+
+

@@ -1,0 +1,814 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.LeadsBox {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    font-family: "Poppins", sans-serif;
+}
+
+.LeadsNav {
+    width: 100%;
+    padding: 0.78125vw 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.78125vw;
+}
+
+.LeadsNav_chill {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.LeadsNav_chill_menuSelect {
+    width: 8.28125vw;
+    height: 1.40625vw;
+    display: flex;
+    gap: 0px;
+    border-bottom: 0.1171875vw solid #C2CFE0;
+}
+
+.LeadsNav_chill_menuSelect button {
+    width: 50%;
+    height: 1.484375vw;
+    font-size: 0.82vw;
+    border: none;
+    background: transparent;
+    color: #C2CFE0;
+    padding: 0;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: .6vw;
+    line-height: 0.6328125vwpx;
+    font-weight: 500;
+
+}
+
+.LeadsNav_chill_menuSelect .active {
+    color: #005EEB;
+    border-bottom: 0.1171875vw solid #005EEB;
+    font-family: "Poppins", sans-serif;
+    font-size: .6vw;
+    line-height: 0.6328125vw;
+    font-weight: 500;
+}
+
+.LeadsNav_chill_menuBar {
+    display: flex;
+    gap: 0.5859375vw;
+}
+
+.LeadsNav_chill_menuBar .search {
+    width: 1.25vw;
+    height: 1.25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.0390625vw solid #005EEB;
+    background: transparent;
+    border-radius: 0.1953125vw;
+    color: #005EEB;
+    font-size: 0.625vw;
+}
+
+.LeadsNav_chill_menuBar .filter {
+    width: 5vw;
+    height: 1.25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.0390625vw solid #005EEB;
+    background: transparent;
+    border-radius: 0.1953125vw;
+    gap: 0.1953125vw;
+    color: #005EEB;
+    font-size: 0.46875vw;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.LeadsNav_chill_menuBar .creted {
+    width: 5vw;
+    height: 1.25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.0390625vw solid #005EEB;
+    background: #005EEB;
+    border-radius: 0.1953125vw;
+    gap: 0.1953125vw;
+    color: #FFFFFF;
+    font-size: 0.625vw;
+    font-weight: 500;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+}
+
+.select button {
+    width: 5.90625vw;
+    height: 2vw;
+    border-radius: 0.390625vw;
+    color: #C2CFE0;
+    border: 0.0390625vw solid #C2CFE0;
+}
+
+.select ul {
+    width: 5.90625vw;
+    background-color: #FFFFFF;
+    border-radius: 0.390625vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    position: absolute;
+    transform: translateY(20px);
+}
+
+.select ul li {
+    width: 70%;
+    font-size: 1vw;
+    padding: 5px 10px;
+    text-decoration: none;
+    list-style-type: none;
+    border-bottom: 0.0390625vw solid #C2CFE0;
+    color: #787878;
+}
+
+.filter .search {
+    width: 1.8vw;
+    height: 1.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.0390625vw solid #005EEB;
+    background: transparent;
+    border-radius: 0.1953125vw;
+    color: #005EEB;
+    font-size: 1vw;
+}
+
+.LeadsMain {
+    width: 99%;
+    height: 80vh;
+    padding: 0.5859375vw 0.390625vw;
+    background-color: #FFFFFF;
+    display: flex;
+    border-radius: 0.390625vw;
+    gap: 0.78125vw;
+}
+
+.LeadsMain_table {
+    width: 10.3515625vw;
+    background-color: #F3F4F7;
+    display: flex;
+    gap: 0.5859375vw;
+    flex-direction: column;
+    padding: 0.5859375vw 0.390625vw;
+    border-radius: 0.390625vw;
+}
+
+.LeadsMain_table .topBtn {
+    height: 1.5625vw;
+    background-color: #005EEB;
+    border-radius: 0.390625vw;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 0.2890625vw 0px #0000001F;
+    font-size: 0.6640625vw;
+}
+
+.LeadsMain_table_lists {
+    display: flex;
+    flex-direction: column;
+    gap: 0.390625vw;
+}
+
+.LeadsMain_table_list {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.390625vw;
+    font-family: sans-serif;
+}
+
+.LeadsMain_table_list_top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1953125vw 0.390625vw;
+}
+
+.LeadsMain_table_list_top p {
+    color: #334D6E;
+    font-size: 0.703125vw;
+    font-weight: 500;
+}
+
+.LeadsMain_table_list_top button {
+    border: none;
+    background: transparent;
+    color: #C2CFE0;
+    font-size: 0.859375vw;
+    padding-right: 0.5859375vw;
+}
+
+.LeadsMain_table_list_phone {
+    display: flex;
+    width: 5.15625vw;
+    height: 0.78125vw;
+    padding: 0px 0.1953125vw 0px 0.5078125vw;
+    align-items: center;
+    gap: 0.1171875vw;
+    flex-shrink: 0;
+    border-radius: 0px 0.1953125vw 0.1953125vw 0px;
+    background: var(--Colors-Blue-Blue, #33A9FF);
+}
+
+.LeadsMain_table_list_phone p {
+    color: var(--Colors-White, #FFF);
+    font-family: "Poppins", sans-serif;
+    font-size: 0.46875vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.0046875vw;
+}
+
+.LeadsMain_table_list_menu {
+    display: flex;
+    border: none;
+    background: none;
+    padding: 0.390625vw;
+}
+
+.LeadsMain_table_list_menu div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1953125vw;
+}
+
+.LeadsMain_table_list_menu button {
+    background: none;
+    border: none;
+    display: flex;
+    gap: 0.1953125vw;
+    font-size: 0.5078125vw;
+    color: #707683;
+    display: flex;
+    align-items: center;
+}
+
+.LeadsMain_table_list_menu button img {
+    width: 0.78125vw;
+    height: 0.78125vw;
+    object-fit: cover;
+}
+
+.LeadsMain_table_list_menu button svg {
+    font-size: 0.703125vw;
+}
+
+#summary {
+    background-color: #334D6E;
+}
+
+.LeadsTable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    height: 60vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.LeadsContent {
+    width: 99%;
+    height: auto;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 0 0.15625vw #ABBED199;
+    border-radius: 0.546875vw;
+    padding: 0 0.390625vw;
+}
+
+thead {
+    width: 100%;
+    height: 2.34375vw;
+}
+
+tbody {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+thead {
+    width: 100%;
+    height: 2.34375vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+thead tr th span {
+    color: #192A3E;
+    font-size: 0.546875vw;
+    font-weight: 500;
+    line-height: 0.7382812499999999vw;
+    letter-spacing: 1%;
+    font-family: "Poppins", sans-serif;
+}
+
+
+tr {
+    width: 100%;
+    height: 2.34375vw;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 0.0390625vw solid #EFF0F1;
+    border-radius: 0.15625vw;
+}
+
+#content_Application:hover {
+    width: 100%;
+    height: 2.34375vw;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: #E4F4FD;
+    justify-content: space-between;
+    border-bottom: 0.0390625vw solid transparent;
+    border-radius: 0.15625vw;
+}
+
+tr:hover td span {
+    color: #005EEB;
+}
+
+.selected {
+    background-color: #E4F4FD;
+}
+
+.selected td span {
+    color: #005EEB;
+}
+
+tbody tr td {
+    width: 5.2734375vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+th {
+    width: 5.2734375vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+td span,
+th span {
+    width: 5.2734375vw;
+    font-size: 0.546875vw;
+    color: #707683;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ShowButtons {
+    display: flex;
+    gap: 0.5859375vw;
+}
+
+.Make {
+    width: 5vw;
+    height: 1.25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.0390625vw solid #005EEB;
+    background: transparent;
+    border-radius: 0.1953125vw;
+    gap: 0.1953125vw;
+    background-color: #005EEB;
+    color: #FFFFFF;
+    font-size: 0.46875vw;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.Delete {
+    width: 5vw;
+    height: 1.25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.0390625vw solid #F7685B;
+    background: transparent;
+    border-radius: 0.1953125vw;
+    gap: 0.1953125vw;
+    background-color: #F7685B;
+    color: #FFFFFF;
+    font-size: 0.46875vw;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+/* ========================================= Leads Card style ======================================= */
+
+
+.LeadsCard {
+    width: 550px;
+    height: 600px;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 5px 50px 25px #00000038;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.LeadsCardNav__closeBtn {
+    position: absolute;
+    right: 15px;
+    top: 13px;
+    border: none;
+    outline: none;
+    background: none;
+    color: #C2CFE0;
+    font-size: 15px;
+}
+
+.LeadsCardNavText {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.LeadsCardNavText p {
+    padding: 0;
+    margin: 0;
+    color: #90A0B7;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    line-height: 18.9px;
+}
+
+.LeadsCardNavText h2 {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    color: #334D6E;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 33.75px;
+}
+
+.LeadsCard__menu {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.LeadsCard__menu button {
+    width: 107px;
+    height: 36px;
+    font-size: 12px;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    font-family: "Poppins", sans-serif;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    color: #90A0B7;
+    border-bottom: 2px solid #90A0B7;
+    transition: .3s ease all;
+    cursor: pointer;
+}
+
+.LeadsCard__menu button:hover {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+}
+
+.menuChil_information {
+    width: 434px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    justify-content: safe;
+    align-content: center;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-gap: 20px 35px;
+    margin-top: 26px;
+    margin-bottom: 50px;
+}
+
+.menuChil_information__chil {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 62px;
+}
+
+.menuChil_information__chil label {
+    font-size: 10px;
+    font-family: "Poppins", sans-serif;
+    color: #334D6E;
+    margin-bottom: 3px;
+}
+
+.menuChil_information__chil input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #C2CFE0;
+    background: #fff;
+    padding: 14.5px 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.menuChil_information__chil select {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #C2CFE0;
+    background: #fff;
+    padding: 14.5px 20px;
+    font-family: "Poppins", sans-serif;
+    color: #707683;
+}
+
+.menuChil_information__chil select option {
+    width: 100%;
+    height: 100%;
+}
+
+.LeadsCard_bottomBtns {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    transform: translateX(-30px); 
+    gap: 10px;
+}
+
+#save {
+    width: 128px;
+    height: 32px;
+    border: 1px solid #005EEB;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    background: #005EEB;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* SMS  */
+
+
+.menuChil_sms_messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuChil_sms_message {
+    width: 498px;
+    height: 250px;
+    border: 1px solid #EBEFF5;
+    border-radius: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    margin-top: 26px;
+}
+
+.menuChil_sms_message::-webkit-scrollbar {
+    width: 12px;
+    /* ширина scrollbar */
+}
+
+.menuChil_sms_message::-webkit-scrollbar-track {
+    background: #F6FAFF;
+    border: 1px solid #E4EAF1;
+    border-radius: 10px;
+    /* цвет дорожки */
+}
+
+.menuChil_sms_message::-webkit-scrollbar-thumb {
+    background-color: #B0C2DA;
+    /* цвет плашки */
+    border-radius: 20px;
+    /* закругления плашки */
+    border: 1px solid #E4EAF1;
+}
+
+.sms_box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    height: auto;
+    border-left: 1px solid #90A0B7;
+    padding-left: 8px;
+}
+
+.sms_box_name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sms_box_name h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: #334D6E;
+    line-height: 16.2px;
+}
+
+.sms_box_name p {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    color: #C2CFE0;
+}
+
+.sms_box_massage p {
+    font-size: 12px;
+    color: #707683;
+    width: 400px;
+}
+
+.sms_box_sendtime p {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    color: #C2CFE0;
+}
+
+.sms_border_box {
+    width: 459px;
+    height: 98px;
+    display: flex;
+    padding-top: 8.64px;
+    padding-bottom: 8.65px;
+    padding-left: 12.69px;
+    padding-right: 13.9px;
+    border: 1px solid #EBEFF5;
+    border-radius: 8px;
+}
+
+.menuChil_sms_message_sendBtn {
+    width: 414px;
+    height: 48px;
+    border-radius: 8px;
+    background: #005EEB;
+    margin-top: 12px;
+    margin-bottom: 25px;
+    border: none;
+    color: #fff;
+    outline: none;
+}
+ 
+
+.LeadsCard_bottomBtns button {
+    width: 128px;
+    height: 32px;
+    border: 1px solid #90A0B7;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    background: none;
+    color: #90A0B7;
+    cursor: pointer;
+}
+
+.menuChil_sms_messagesSend {
+    display: flex;
+    flex-direction: column;
+}
+
+.menuChil_sms_messagesSend textarea {
+    max-width: 500px;
+    min-width: 500px;
+    max-height: 250px;
+    min-height: 250px;
+    padding: 10px;
+    border-radius: 7px;
+    margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+}
+
+.menuChil_sms_messagesSend_menuBtns {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+
+.menuChil_sms_messagesSend_menuBtns button {
+    border: 1px solid #005EEB;
+    color: #005EEB;
+    background: transparent;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menuChil_sms_messagesSend_endBtns {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.menuChil_sms_messagesSend_endBtns button {
+    width: 50%;
+    padding: 15px 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.menuChil_sms_messagesSend_endBtns button:nth-child(1) {
+    border: 1px solid #005EEB;
+    color: #005EEB;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+.menuChil_sms_messagesSend_endBtns button:nth-child(2) {
+    border: 1px solid #005EEB;
+    color: white;
+    background: #005EEB;
+    cursor: pointer;
+}
