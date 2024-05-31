@@ -216,6 +216,7 @@ export default function Client() {
         },
     ]);
 
+
     const [activeRows, setActiveRows] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
@@ -226,34 +227,43 @@ export default function Client() {
     const [activeDiv, setActiveDiv] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isFiltersActive, setIsFiltersActive] = useState(false);
-    const [formData, setFormData] = useState({ dropdownSelection: '' });
     const [startDate, setStartDate] = useState(new Date());
 
     const toggleDropdown = () => {
         setDropdownVisible(!dropdownVisible);
     };
 
-    const handleDropdownSelection = (selection) => {
-        setFormData({ ...formData, dropdownSelection: selection });
-        setDropdownVisible(false);
-    };
-
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        phoneNumber: '',
+        dropdownSelection: '',
+        individualLessons: false,
+        groupLessons: false,
+    });
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
+        setFormData(prevState => ({
+            ...prevState,
             [name]: value,
-        });
+        }));
     };
 
     const handleFormCheckboxChange = (e) => {
-        const { name } = e.target;
-        setFormData({
-            ...formData,
-            individualLessons: name === 'individualLessons',
-            groupLessons: name === 'groupLessons',
-        });
+        const { name, checked } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: checked,
+        }));
+    };
+
+    const handleDropdownSelection = (selection) => {
+        setFormData(prevState => ({
+            ...prevState,
+            dropdownSelection: selection,
+        }));
+        setDropdownVisible(false);
     };
 
     const isFormValid = () => {

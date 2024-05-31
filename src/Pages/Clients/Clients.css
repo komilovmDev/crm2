@@ -545,8 +545,7 @@
     font-size: 12px;
     outline: none;
     line-height: 16.2px;
-    font-weight: 400;
-    cursor: pointer;
+    font-weight: 400; 
     transition: .3s ease all;
 }
 
