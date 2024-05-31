@@ -340,7 +340,7 @@
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     gap: 15px;
     width: 100%;
     height: auto;
@@ -421,7 +421,7 @@
     border: 1px solid #005EEB;
     border-radius: 6px;
     gap: 10px;
-} 
+}
 
 .IconNewCust {
     font-size: 20px;
@@ -465,4 +465,219 @@
 
 }
 
+.form-label {
+    display: flex;
+    flex-direction: column;
+}
 
+.dropdown-button {
+    cursor: pointer;
+    border: 1px solid #C2CFE0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px 16px 20px;
+    background: #FFFFFF;
+    color: #707683;
+    font-size: 12px;
+    outline: none;
+    line-height: 16.2px;
+    font-weight: 400;
+}
+
+.dropdown-menu-show {
+    display: block;
+}
+
+.dropdown-menu-hidden {
+    display: none;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+
+.ModalCreateNewStud {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.CreateNewsTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.CreateNewsTitle p {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: #90A0B7;
+    line-height: 18.9px;
+}
+
+.CreateNewsTitle h2 {
+    padding: 0;
+    margin: 0;
+    color: #334D6E;
+    font-size: 25px;
+    line-height: 33.75px;
+}
+
+.CreateNewsContant {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.CreateNewsContant label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.CreateNewsContant label p {
+    font-size: 10px;
+    line-height: 13.5px;
+    font-weight: 500;
+    color: #334D6E;
+}
+
+.CreateNewsContant label input {
+    width: 171px;
+    border: 1px solid #C2CFE0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px 20px 16px 20px;
+    background: #FFFFFF;
+    color: #707683;
+    font-size: 12px;
+    outline: none;
+    line-height: 16.2px;
+    font-weight: 400;
+}
+
+.CheckboxNewStud {
+    margin-top: 27px;
+    width: 86%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: flex-start;
+}
+
+.CheckboxNewStud_title p {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 13.5px;
+    color: #334D6E;
+}
+
+.CheckBox_BOX {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.CheckBox_BOX label {
+    display: flex;
+    width: 198.71px;
+    height: 32px;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    color: #707683;
+    gap: 10px;
+}
+
+.CheckBox_BOX input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    margin-right: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.3s;
+}
+
+.CheckBox_BOX input[type="checkbox"]:checked {
+    border-color: #005EEB;
+    /* Change to the desired border color when checked */
+}
+
+.CheckBox_BOX input[type="checkbox"]:checked::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #005EEB;
+    /* Change to the desired inner circle color when checked */
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.CreateNewStudButtons {
+    margin-top: 24px;
+    width: 520px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 13px;
+}
+
+.GoBackStud {
+    width: 128px;
+    border: 1px solid #90A0B7;
+    background: #ffffff;
+    font-size: 12px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 8px;
+    outline: none;
+    color: #90A0B7;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+}
+
+.NextStud {
+    width: 128px;
+    border: 1px solid #005EEB;
+    background: #005EEB;
+    font-size: 12px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 8px;
+    outline: none;
+    color: #ffffff;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+}

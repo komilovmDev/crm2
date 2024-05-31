@@ -14,9 +14,17 @@ import { GoPlus } from "react-icons/go";
 import { TbUser } from "react-icons/tb";
 import { TbUserUp } from "react-icons/tb";
 import { IoCloseOutline } from "react-icons/io5";
+import React from 'react';
 import LeadCard from '../leads/LeadCard';
+import { FaAngleDown } from "react-icons/fa6";
 
 export default function Client() {
+
+    const [dropdownVisible, setDropdownVisible] = useState(false);
+
+    const toggleDropdown = () => {
+        setDropdownVisible(!dropdownVisible);
+    };
 
     const [clients, setClients] = useState([
         {
@@ -513,9 +521,38 @@ export default function Client() {
                 )}
                 {modalContent === 'addNewStudent' && (
                     <div className="ModalCreateNewStud">
+                        <div className="CreateNewsTitle">
+                            <h2>Add a new student</h2>
+                            <p>Fill in the requested information below</p>
+                        </div>
+                        <div className="CreateNewsContant">
+                            <label><p>First name*</p><input placeholder='John' type="text" /></label>
+                            <label><p>Last name*</p><input placeholder='Anderson' type="text" /></label>
+                            <label><p>Phone number*</p><input placeholder='+998' type="text" /></label>
+                            <label className="form-label">
+                                <p>First name*</p>
+                                <button id="dropdownButtonNewStud" onClick={toggleDropdown} className="dropdown-button">
+                                    <p>Select</p><span><FaAngleDown /></span>
+                                </button>
+                                <div id="dropdownMenuNewStud" className={dropdownVisible ? 'dropdown-menu-show' : 'dropdown-menu-hidden'}>
+                                    <a href="#" className="dropdown-item">Option 1</a>
+                                    <a href="#" className="dropdown-item">Option 2</a>
+                                    <a href="#" className="dropdown-item">Option 3</a>
+                                </div>
+                            </label>
+                        </div>
+                        <div className="CheckboxNewStud">
+                            <div className="CheckboxNewStud_title">
+                                <p>Select type of lesson*</p>
+                            </div>
+                            <div className="CheckBox_BOX">
+                                <label><input type="checkbox" /><p>Individual lessons</p></label>
+                                <label><input type="checkbox" /><p>Group lessons</p></label>
+                            </div>
+                        </div>
                         <div className="CreateNewStudButtons">
-                            <button onClick={handleGoBack}>Go back</button>
-                            <button>Next</button>
+                            <button className='GoBackStud' onClick={handleGoBack}>Go back</button>
+                            <button className='NextStud'>Next</button>
                         </div>
                     </div>
                 )}
