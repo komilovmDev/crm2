@@ -17,14 +17,11 @@ import { IoCloseOutline } from "react-icons/io5";
 import React from 'react';
 import LeadCard from '../leads/LeadCard';
 import { FaAngleDown } from "react-icons/fa6";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 export default function Client() {
 
-    const [dropdownVisible, setDropdownVisible] = useState(false);
-
-    const toggleDropdown = () => {
-        setDropdownVisible(!dropdownVisible);
-    };
 
     const [clients, setClients] = useState([
         {
@@ -224,20 +221,54 @@ export default function Client() {
     const [currentPage, setCurrentPage] = useState(1);
     const [rowsPerPage] = useState(10);
     const [view, setView] = useState('All Students');
+    const [dropdownVisible, setDropdownVisible] = useState(false);
+    const [modalContent, setModalContent] = useState('initial');
+    const [activeDiv, setActiveDiv] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isFiltersActive, setIsFiltersActive] = useState(false);
+    const [formData, setFormData] = useState({ dropdownSelection: '' });
+    const [startDate, setStartDate] = useState(new Date());
+
+    const toggleDropdown = () => {
+        setDropdownVisible(!dropdownVisible);
+    };
+
+    const handleDropdownSelection = (selection) => {
+        setFormData({ ...formData, dropdownSelection: selection });
+        setDropdownVisible(false);
+    };
 
 
-    // Navigate to the previous page
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleFormCheckboxChange = (e) => {
+        const { name } = e.target;
+        setFormData({
+            ...formData,
+            individualLessons: name === 'individualLessons',
+            groupLessons: name === 'groupLessons',
+        });
+    };
+
+    const isFormValid = () => {
+        return formData.firstName && formData.lastName && formData.phoneNumber && formData.dropdownSelection && (formData.individualLessons || formData.groupLessons);
+    };
+
     const handlePreviousPage = () => {
         setCurrentPage(prev => Math.max(prev - 1, 1));
     };
 
-    // Navigate to the next page
     const handleNextPage = () => {
         setCurrentPage(prev => prev + 1);
     };
 
     useEffect(() => {
-        // Automatically adjust selectAll when activeRows changes
         setSelectAll(activeRows.length === clients.length);
     }, [activeRows, clients.length]);
 
@@ -249,8 +280,8 @@ export default function Client() {
         }
     };
 
-    const handleCheckboxChange = (event, clientId) => {
-        event.stopPropagation(); // Prevent triggering row click
+    const handleRowCheckboxChange = (event, clientId) => {
+        event.stopPropagation();
         const updatedActiveRows = activeRows.includes(clientId)
             ? activeRows.filter(id => id !== clientId)
             : [...activeRows, clientId];
@@ -258,11 +289,47 @@ export default function Client() {
     };
 
     const handleRowClick = (clientId) => {
-        handleCheckboxChange({ stopPropagation: () => { } }, clientId); // Simulate an event object
+        handleRowCheckboxChange({ stopPropagation: () => { } }, clientId);
     };
 
     const currentClients = clients.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
     const totalPages = Math.ceil(clients.length / rowsPerPage);
+
+    const handleAddNewStudent = () => {
+        setActiveDiv('addNewStudent');
+        setModalContent('addNewStudent');
+    };
+
+    const handleAddNewCustomer = () => {
+        setActiveDiv('addNewCustomer');
+        setModalContent('addNewCustomer');
+    };
+
+    const handleNextButtonClick = () => {
+        if (isFormValid()) {
+            if (formData.individualLessons) {
+                setModalContent('individualLesson');
+            } else if (formData.groupLessons) {
+                setModalContent('groupLesson');
+            }
+        }
+    };
+
+    const handleGoBack = () => {
+        if (modalContent === 'individualLesson' || modalContent === 'groupLesson') {
+            setModalContent('addNewStudent');
+        } else {
+            setModalContent('initial');
+        }
+    };
+
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    };
 
     const renderContent = () => {
         switch (view) {
@@ -284,7 +351,7 @@ export default function Client() {
                         <div className="ClientTable">
                             {clients.map((client, index) => (
                                 <div key={client.id} className={`GlavTable ${activeRows.includes(client.id) ? 'active' : ''}`} onClick={() => handleRowClick(client.id)} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', border: '1px solid #F8FAFC', borderRight: 'none', borderLeft: 'none', cursor: 'pointer', }}>
-                                    <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={activeRows.includes(client.id)} onChange={(e) => handleCheckboxChange(e, client.id)} /> < readOnly /></span>
+                                    <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={activeRows.includes(client.id)} onChange={(e) => handleRowCheckboxChange(e, client.id)} /> < readOnly /></span>
                                     <span className='Nomber'><p style={{ fontSize: '14px', color: '#707683' }}>{client.number}</p></span>
                                     <span className='Id'><p style={{ fontSize: '14px', color: '#707683' }}>{client.id}</p></span>
                                     <span className='Name' style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}><p style={{ fontSize: '14px', color: '#707683' }}>{client.name}</p><div className="chervon"><p style={{ fontSize: '10px', color: '#707683' }}>{client.age} ({client.dob})</p></div></span>
@@ -328,7 +395,7 @@ export default function Client() {
                     <div className="ClientTable">
                         {clients.map((client, index) => (
                             <div key={client.id} className={`GlavTable ${activeRows.includes(client.id) ? 'active' : ''}`} onClick={() => handleRowClick(client.id)} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', border: '1px solid #F8FAFC', borderRight: 'none', borderLeft: 'none', cursor: 'pointer', }}>
-                                <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={activeRows.includes(client.id)} onChange={(e) => handleCheckboxChange(e, client.id)} /> < readOnly /></span>
+                                <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={activeRows.includes(client.id)} onChange={(e) => handleRowCheckboxChange(e, client.id)} /> < readOnly /></span>
                                 <span className='Nomber'><p style={{ fontSize: '14px', color: '#707683' }}>{client.number}</p></span>
                                 <span className='Id'><p style={{ fontSize: '14px', color: '#707683' }}>{client.id}</p></span>
                                 <span className='Name' style={{ width: '185px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}><p style={{ fontSize: '14px', color: '#707683' }}>{client.name}</p><div className="chervon"><p style={{ fontSize: '10px', color: '#707683' }}>{client.age} ({client.dob})</p></div></span>
@@ -370,7 +437,7 @@ export default function Client() {
                     <div className="ClientTable">
                         {clients.map((client, index) => (
                             <div key={client.id} className={`GlavTable ${activeRows.includes(client.id) ? 'active' : ''}`} onClick={() => handleRowClick(client.id)} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', border: '1px solid #F8FAFC', borderRight: 'none', borderLeft: 'none', cursor: 'pointer', }}>
-                                <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={activeRows.includes(client.id)} onChange={(e) => handleCheckboxChange(e, client.id)} /> < readOnly /></span>
+                                <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={activeRows.includes(client.id)} onChange={(e) => handleRowCheckboxChange(e, client.id)} /> < readOnly /></span>
                                 <span className='Nomber'><p style={{ fontSize: '14px', color: '#707683' }}>{client.number}</p></span>
                                 <span className='Id'><p style={{ fontSize: '14px', color: '#707683' }}>{client.id}</p></span>
                                 <span className='Name' style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}><p style={{ fontSize: '14px', color: '#707683' }}>{client.name}</p><div className="chervon"><p style={{ fontSize: '10px', color: '#707683' }}>{client.age} ({client.dob})</p></div></span>
@@ -417,37 +484,6 @@ export default function Client() {
             </div>
         );
     };
-
-    const [isFiltersActive, setIsFiltersActive] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [activeDiv, setActiveDiv] = useState(null);
-    const [modalContent, setModalContent] = useState('initial');
-
-    const handleOpenModal = () => {
-        setIsModalOpen(true);
-        setActiveDiv(null); // Reset active div when modal opens
-        setModalContent('initial'); // Show initial content when modal opens
-    };
-
-    const handleCloseModal = () => {
-        setIsModalOpen(false);
-    };
-
-    const handleAddNewStudent = () => {
-        setActiveDiv('addNewStudent');
-        setModalContent('addNewStudent');
-    };
-
-    const handleAddNewCustomer = () => {
-        setActiveDiv('addNewCustomer');
-        setModalContent('addNewCustomer');
-    };
-
-    const handleGoBack = () => {
-        setActiveDiv(null);
-        setModalContent('initial');
-    };
-
 
     return (
         <div className="Client" style={{ width: '100%', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
@@ -526,19 +562,29 @@ export default function Client() {
                             <p>Fill in the requested information below</p>
                         </div>
                         <div className="CreateNewsContant">
-                            <label><p>First name*</p><input placeholder='John' type="text" /></label>
-                            <label><p>Last name*</p><input placeholder='Anderson' type="text" /></label>
-                            <label><p>Phone number*</p><input placeholder='+998' type="text" /></label>
-                            <label className="form-label">
+                            <label>
                                 <p>First name*</p>
-                                <button id="dropdownButtonNewStud" onClick={toggleDropdown} className="dropdown-button">
-                                    <p>Select</p><span><FaAngleDown /></span>
-                                </button>
-                                <div id="dropdownMenuNewStud" className={dropdownVisible ? 'dropdown-menu-show' : 'dropdown-menu-hidden'}>
-                                    <a href="#" className="dropdown-item">Option 1</a>
-                                    <a href="#" className="dropdown-item">Option 2</a>
-                                    <a href="#" className="dropdown-item">Option 3</a>
-                                </div>
+                                <input name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder='John' type="text" />
+                            </label>
+                            <label>
+                                <p>Last name*</p>
+                                <input name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder='Anderson' type="text" />
+                            </label>
+                            <label>
+                                <p>Phone number*</p>
+                                <input name="phoneNumber" value={formData.phoneNumber} onChange={handleInputChange} placeholder='+998' type="text" />
+                            </label>
+                            <label className="form-label">
+                                <p>Birthday</p>
+                                <DatePicker
+                                    className='DatePicker'
+                                    selected={startDate}
+                                    onChange={(date) => {
+                                        setStartDate(date);
+                                        handleDropdownSelection(date.toDateString());
+                                    }}
+                                    dateFormat="MMMM d, yyyy"
+                                />
                             </label>
                         </div>
                         <div className="CheckboxNewStud">
@@ -546,14 +592,107 @@ export default function Client() {
                                 <p>Select type of lesson*</p>
                             </div>
                             <div className="CheckBox_BOX">
-                                <label><input type="checkbox" /><p>Individual lessons</p></label>
-                                <label><input type="checkbox" /><p>Group lessons</p></label>
+                                <label>
+                                    <input type="checkbox" name="individualLessons" checked={formData.individualLessons} onChange={handleFormCheckboxChange} />
+                                    <p>Individual lessons</p>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="groupLessons" checked={formData.groupLessons} onChange={handleFormCheckboxChange} />
+                                    <p>Group lessons</p>
+                                </label>
                             </div>
                         </div>
                         <div className="CreateNewStudButtons">
-                            <button className='GoBackStud' onClick={handleGoBack}>Go back</button>
-                            <button className='NextStud'>Next</button>
+                            <button className='GoBackStud' onClick={handleGoBack} >
+                                Go back
+                            </button>
+                            <button className='NextStud' disabled={!isFormValid()} onClick={handleNextButtonClick} >
+                                Next
+                            </button>
                         </div>
+                    </div>
+                )}
+                {modalContent === 'individualLesson' && (
+                    <div className="IndividualLessonContent">
+                        <div className="IndividualLessonContent_Title">
+                            <h2>Add a new student</h2>
+                            <p>Fill in the requested information below</p>
+                        </div>
+                        <div className="IndividualLessonContent_Podtitle">
+                            <p>Create individual lesson for Alisher Atajanov</p>
+                        </div>
+                        <div className="IndividualLessonContent_SelectBox">
+                            <div className="Select_one">
+                                <p>Select subject*</p>
+                                <select name="" id="">
+                                    <option value="">option 1</option>
+                                    <option value="">option 2</option>
+                                    <option value="">option 3</option>
+                                </select>
+                            </div>
+                            <div className="Select_two">
+                                <p>Select level*</p>
+                                <select name="" id="">
+                                    <option value="">option 1</option>
+                                    <option value="">option 2</option>
+                                    <option value="">option 3</option>
+                                </select>
+                            </div>
+                            <div className="Select_three">
+                                <p>Select teacher*</p>
+                                <select name="" id="">
+                                    <option value="">option 1</option>
+                                    <option value="">option 2</option>
+                                    <option value="">option 3</option>
+                                </select>
+                            </div>
+                            <div className="Select_four">
+                                <p>Select days*</p>
+                                <select name="" id="">
+                                    <option value="">option 1</option>
+                                    <option value="">option 2</option>
+                                    <option value="">option 3</option>
+                                </select>
+                            </div>
+                            <div className="Select_five">
+                                <p>Select start time*</p>
+                                <select name="" id="">
+                                    <option value="">option 1</option>
+                                    <option value="">option 2</option>
+                                    <option value="">option 3</option>
+                                </select>
+                            </div>
+                            <div className="Select_six">
+                                <p>Select room*</p>
+                                <select name="" id="">
+                                    <option value="">option 1</option>
+                                    <option value="">option 2</option>
+                                    <option value="">option 3</option>
+                                </select>
+                            </div>
+                            <div className="Select_seven">
+                                <p>Select start day*</p>
+                                <select name="" id="">
+                                    <option value="">option 1</option>
+                                    <option value="">option 2</option>
+                                    <option value="">option 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="IndividualLessonContent_CheckBox">
+                            <input type="checkbox" />
+                            <p>Create a new individual price</p>
+                        </div>
+                        <button onClick={handleGoBack}>Go back</button>
+                        <button>Confim</button>
+                    </div>
+                )}
+                {modalContent === 'groupLesson' && (
+                    <div className="GroupLessonContent">
+                        <button onClick={handleGoBack}>Go back</button>
+                        <h2>Group Lesson</h2>
+                        {/* Add content for group lesson here */}
+                        <p>Content for group lessons</p>
                     </div>
                 )}
                 {modalContent === 'addNewCustomer' && (
@@ -563,6 +702,6 @@ export default function Client() {
                     </div>
                 )}
             </Modal>
-        </div>
+        </div >
     );
 };
