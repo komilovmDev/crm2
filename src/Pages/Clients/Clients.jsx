@@ -220,6 +220,7 @@ export default function Client() {
         },
     ]);
 
+
     const [activeRows, setActiveRows] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
