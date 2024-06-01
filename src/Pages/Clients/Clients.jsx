@@ -19,9 +19,13 @@ import LeadCard from '../leads/LeadCard';
 import { FaAngleDown } from "react-icons/fa6";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import CustomSelect from '../../components/Seleect/Select';
 
 export default function Client() {
 
+    const options1 = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
+    const options2 = ['Choice A', 'Choice B', 'Choice C'];
+    const options3 = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
 
     const [clients, setClients] = useState([
         {
@@ -226,38 +230,21 @@ export default function Client() {
     const [activeDiv, setActiveDiv] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isFiltersActive, setIsFiltersActive] = useState(false);
-    const [formData, setFormData] = useState({ dropdownSelection: '' });
     const [startDate, setStartDate] = useState(new Date());
-
-    const toggleDropdown = () => {
-        setDropdownVisible(!dropdownVisible);
-    };
+    const [formData, setFormData] = useState({ firstName: '', lastName: '', phoneNumber: '' });
 
     const handleDropdownSelection = (selection) => {
-        setFormData({ ...formData, dropdownSelection: selection });
+        setFormData(prevState => ({ ...prevState, dropdownSelection: selection }));
         setDropdownVisible(false);
-    };
-
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
     };
 
     const handleFormCheckboxChange = (e) => {
         const { name } = e.target;
-        setFormData({
-            ...formData,
+        setFormData(prevState => ({
+            ...prevState,
             individualLessons: name === 'individualLessons',
             groupLessons: name === 'groupLessons',
-        });
-    };
-
-    const isFormValid = () => {
-        return formData.firstName && formData.lastName && formData.phoneNumber && formData.dropdownSelection && (formData.individualLessons || formData.groupLessons);
+        }));
     };
 
     const handlePreviousPage = () => {
@@ -306,12 +293,10 @@ export default function Client() {
     };
 
     const handleNextButtonClick = () => {
-        if (isFormValid()) {
-            if (formData.individualLessons) {
-                setModalContent('individualLesson');
-            } else if (formData.groupLessons) {
-                setModalContent('groupLesson');
-            }
+        if (formData.individualLessons) {
+            setModalContent('individualLesson');
+        } else if (formData.groupLessons) {
+            setModalContent('groupLesson');
         }
     };
 
@@ -330,6 +315,7 @@ export default function Client() {
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
+
 
     const renderContent = () => {
         switch (view) {
@@ -564,15 +550,15 @@ export default function Client() {
                         <div className="CreateNewsContant">
                             <label>
                                 <p>First name*</p>
-                                <input name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder='John' type="text" />
+                                <input name="firstName" placeholder='John' type="text" />
                             </label>
                             <label>
                                 <p>Last name*</p>
-                                <input name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder='Anderson' type="text" />
+                                <input name="lastName" placeholder='Anderson' type="text" />
                             </label>
                             <label>
                                 <p>Phone number*</p>
-                                <input name="phoneNumber" value={formData.phoneNumber} onChange={handleInputChange} placeholder='+998' type="text" />
+                                <input name="phoneNumber" placeholder='+998' type="tel" />
                             </label>
                             <label className="form-label">
                                 <p>Birthday</p>
@@ -606,7 +592,7 @@ export default function Client() {
                             <button className='GoBackStud' onClick={handleGoBack} >
                                 Go back
                             </button>
-                            <button className='NextStud' disabled={!isFormValid()} onClick={handleNextButtonClick} >
+                            <button className='NextStud' onClick={handleNextButtonClick} >
                                 Next
                             </button>
                         </div>
@@ -621,62 +607,40 @@ export default function Client() {
                         <div className="IndividualLessonContent_Podtitle">
                             <p>Create individual lesson for Alisher Atajanov</p>
                         </div>
-                        <div className="IndividualLessonContent_SelectBox">
-                            <div className="Select_one">
-                                <p>Select subject*</p>
-                                <select name="" id="">
-                                    <option value="">option 1</option>
-                                    <option value="">option 2</option>
-                                    <option value="">option 3</option>
-                                </select>
-                            </div>
-                            <div className="Select_two">
-                                <p>Select level*</p>
-                                <select name="" id="">
-                                    <option value="">option 1</option>
-                                    <option value="">option 2</option>
-                                    <option value="">option 3</option>
-                                </select>
-                            </div>
-                            <div className="Select_three">
-                                <p>Select teacher*</p>
-                                <select name="" id="">
-                                    <option value="">option 1</option>
-                                    <option value="">option 2</option>
-                                    <option value="">option 3</option>
-                                </select>
-                            </div>
-                            <div className="Select_four">
-                                <p>Select days*</p>
-                                <select name="" id="">
-                                    <option value="">option 1</option>
-                                    <option value="">option 2</option>
-                                    <option value="">option 3</option>
-                                </select>
-                            </div>
-                            <div className="Select_five">
-                                <p>Select start time*</p>
-                                <select name="" id="">
-                                    <option value="">option 1</option>
-                                    <option value="">option 2</option>
-                                    <option value="">option 3</option>
-                                </select>
-                            </div>
-                            <div className="Select_six">
-                                <p>Select room*</p>
-                                <select name="" id="">
-                                    <option value="">option 1</option>
-                                    <option value="">option 2</option>
-                                    <option value="">option 3</option>
-                                </select>
-                            </div>
-                            <div className="Select_seven">
-                                <p>Select start day*</p>
-                                <select name="" id="">
-                                    <option value="">option 1</option>
-                                    <option value="">option 2</option>
-                                    <option value="">option 3</option>
-                                </select>
+                        <div className="Selec_General_Box">
+                            <div className="IndividualLessonContent_SelectBox">
+                                <div className="Select">
+                                    <p>Select subject*</p>
+                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                                </div>
+                                <div className="Select">
+                                    <p>Select level*</p>
+                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                                </div>
+                                <div className="Select">
+                                    <p>Select teacher*</p>
+                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                                </div>
+                                <div className="Select">
+                                    <p>Select days*</p>
+                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                                </div>
+                                <div className="Select">
+                                    <p>Select start time*</p>
+                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                                </div>
+                                <div className="Select">
+                                    <p>Select room*</p>
+                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                                </div>
+                                <div className="Select_input">
+                                    <p>Select start day*</p>
+                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                                </div>
+                                <div className="Select">
+                                    <p>Select start day*</p>
+                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                                </div>
                             </div>
                         </div>
                         <div className="IndividualLessonContent_CheckBox">
