@@ -636,7 +636,7 @@ export default function Client() {
                                 </div>
                                 <div className="Select_input">
                                     <p>Select start day*</p>
-                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                                    <input placeholder='' type="text" />
                                 </div>
                                 <div className="Select">
                                     <p>Select start day*</p>
