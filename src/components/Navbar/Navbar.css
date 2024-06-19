@@ -46,6 +46,7 @@
     background-color:white;
     box-shadow:0 0 .5vw rgba(0, 0, 0, 0.178);
     border-radius:.5vw;
+    z-index: 10;
 }
 
 .DropDownNavButton {

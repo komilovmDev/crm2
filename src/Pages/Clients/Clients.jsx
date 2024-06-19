@@ -20,6 +20,8 @@ import { FaAngleDown } from "react-icons/fa6";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import CustomSelect from '../../components/Seleect/Select';
+import { Link } from 'react-router-dom';
+import { CiShare1 } from "react-icons/ci";
 
 export default function Client() {
 
@@ -341,7 +343,7 @@ export default function Client() {
                                     <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={activeRows.includes(client.id)} onChange={(e) => handleRowCheckboxChange(e, client.id)} /> < readOnly /></span>
                                     <span className='Nomber'><p style={{ fontSize: '14px', color: '#707683' }}>{client.number}</p></span>
                                     <span className='Id'><p style={{ fontSize: '14px', color: '#707683' }}>{client.id}</p></span>
-                                    <span className='Name' style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}><p style={{ fontSize: '14px', color: '#707683' }}>{client.name}</p><div className="chervon"><p style={{ fontSize: '10px', color: '#707683' }}>{client.age} ({client.dob})</p></div></span>
+                                    <span className='Name' style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}><p style={{ fontSize: '14px', color: '#707683' }}>{client.name}</p><Link to={'/StudentPage'}><span><CiShare1 /></span></Link><div className="chervon"><p style={{ fontSize: '10px', color: '#707683' }}>{client.age} ({client.dob})</p></div></span>
                                     <span className='Points' style={{ justifyContent: 'flex-start', gap: '5px' }}><p style={{ fontSize: '14px', color: '#FFB946', width: '16px' }}><FaStar /></p><div className="chervon"><p style={{ fontSize: '12px', color: '#707683' }}>{client.points}</p></div></span>
                                     <span className='Lesson' style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}><p style={{ fontSize: '14px', color: '#707683' }}>{client.lesson}</p><div className="chervon"><p style={{ fontSize: '10px', color: '#707683' }}>{client.lessonDetail}</p></div></span>
                                     <span className='Status' ><p style={{ width: '47px', height: '19px', borderRadius: '4px', backgroundColor: '#2ED47A', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#FFFFFF' }}>{client.status}</p></span>
