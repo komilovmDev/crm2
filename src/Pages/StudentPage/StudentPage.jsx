@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Studentpage.css';
+import { IoChevronBack } from "react-icons/io5";
+import { TbUserPlus } from "react-icons/tb";
 
 export default function StudentPage() {
     const [activeSection, setActiveSection] = useState('Profile');
@@ -83,17 +85,17 @@ export default function StudentPage() {
             <div className="StudentsNav">
                 <div className="LeftStudNav">
                     <div className="ButtonBack">
-                        <button>Back</button>
+                        <button><IoChevronBack /></button>
                     </div>
                     <div className="ButtonNavigationStud">
-                        <button onClick={() => setActiveSection('Profile')}>Profile</button>
-                        <button onClick={() => setActiveSection('Lesson & homework')}>Lesson & Homework</button>
-                        <button onClick={() => setActiveSection('Finance')}>Finance</button>
-                        <button onClick={() => setActiveSection('History')}>History</button>
+                        <button id='Profile' onClick={() => setActiveSection('Profile')}>Profile</button>
+                        <button id='Lesson' onClick={() => setActiveSection('Lesson & homework')}>Lesson & Homework</button>
+                        <button id='Finance' onClick={() => setActiveSection('Finance')}>Finance</button>
+                        <button id='History' onClick={() => setActiveSection('History')}>History</button>
                     </div>
                 </div>
                 <div className="RightStudNav">
-                    <button>Add to Group</button>
+                    <button><span><TbUserPlus /></span>Add to Group</button>
                     <button>Individual Lesson</button>
                     <button>...</button>
                 </div>
