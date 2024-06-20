@@ -32,7 +32,7 @@ function App() {
           <Route path="/Clients" element={<Client />} />
           <Route path="/finance" element={<MonthlyFinancialIndicatorsChart />} />
           <Route path="/login" element={<Login token={token} setToken={setToken} />} />
-          <Route path="/Student_Page" element={<StudentPage />} />
+          <Route path="/Student-Page" element={<StudentPage />} />
         </Routes>
       </div>
     </div>

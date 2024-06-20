@@ -40,6 +40,7 @@
     font-size: 14px;
     display: flex;
     justify-content: center;
+    color: #707683;
 }
 
 .Id {
@@ -56,6 +57,7 @@
     padding: 0;
     margin: 0;
     font-size: 14px;
+    color: #707683;
 }
 
 .Name {
@@ -72,6 +74,7 @@
     padding: 0;
     margin: 0;
     font-size: 14px;
+    color: #707683;
 }
 
 .Points {
@@ -88,6 +91,7 @@
     padding: 0;
     margin: 0;
     font-size: 14px;
+    color: #707683;
 }
 
 .Lesson {
@@ -104,6 +108,7 @@
     padding: 0;
     margin: 0;
     font-size: 14px;
+    color: #707683;
 }
 
 .Status {
@@ -120,6 +125,7 @@
     padding: 0;
     margin: 0;
     font-size: 14px;
+    color: #707683;
 }
 
 .Study {
@@ -136,6 +142,7 @@
     padding: 0;
     margin: 0;
     font-size: 14px;
+    color: #707683;
 }
 
 .Phone {
@@ -152,6 +159,7 @@
     padding: 0;
     margin: 0;
     font-size: 14px;
+    color: #707683;
 }
 
 .Balance {
@@ -167,6 +175,7 @@
     padding: 0;
     margin: 0;
     font-size: 14px;
+    color: #707683;
 }
 
 
@@ -746,3 +755,34 @@
     line-height: 13.5px;
     font-weight: 500;
 }
+
+.linktoStudpage {
+    display: none;
+}
+
+.GlavTable:hover .linktoStudpage{
+    display: block;
+}
+
+.GlavTable.active{
+    background-color: #E4F4FD;
+}
+
+.ClientTable
+
+.GlavTable:hover {
+    background-color: #E4F4FD;
+}
+
+.GlavTable:hover #numberP{
+    color: #000;
+} 
+
+.GlavTable:hover .Name p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: #000;
+}
+ 

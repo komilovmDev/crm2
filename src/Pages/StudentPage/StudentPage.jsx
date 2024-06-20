@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Studentpage.css';
 
 export default function StudentPage() {
     const [activeSection, setActiveSection] = useState('Profile');
@@ -7,14 +8,14 @@ export default function StudentPage() {
         switch (activeSection) {
             case 'Profile':
                 return (
-                    <div className='Profile'>
+                    <div className="Profile">
                         <div className="UserProfile">
                             <div className="UserProfileLeft">
                                 <div className="UserProfileAvatars">
-                                    <img src="" alt="" />
+                                    <img src="path_to_avatar" alt="User Avatar" />
                                 </div>
                                 <div className="UserProfileNaming">
-                                    <p>nice to meet you !</p>
+                                    <p>Nice to meet you!</p>
                                     <h2>Alisher Atajanov</h2>
                                     <div className="UserProfileStatus">
                                         <button>Student</button>
@@ -24,16 +25,16 @@ export default function StudentPage() {
                             </div>
                             <div className="UserProfileCard">
                                 <div className="CardId">
-                                    <h2>Finance card</h2>
+                                    <h2>Finance Card</h2>
                                     <p>ID: <span>0989736</span></p>
                                 </div>
                                 <div className="CardBalance">
                                     <p>Current balance:</p>
-                                    <h2>557 000 so’m</h2>
+                                    <h2>557,000 so’m</h2>
                                 </div>
                             </div>
                         </div>
-                        <div className="Userpoints">
+                        <div className="UserPoints">
                             <div className="UserPointsUp">
                                 <div className="UserPointUpNav">
                                     <p>Points</p>
@@ -41,19 +42,19 @@ export default function StudentPage() {
                                 </div>
                                 <div className="UserPointsBox">
                                     <div className="Points">
-                                        <div className="Pointsava">
-                                            <img src="" alt="" />
+                                        <div className="PointsAva">
+                                            <img src="path_to_points_avatar" alt="Points Avatar" />
                                         </div>
                                         <div className="PointsText">
                                             <span>160</span>
                                             <p>Points</p>
                                         </div>
                                     </div>
-                                    <div className="Avarage">
-                                        <div className="Avarageava">
-                                            <img src="" alt="" />
+                                    <div className="Average">
+                                        <div className="AverageAva">
+                                            <img src="path_to_average_avatar" alt="Average Avatar" />
                                         </div>
-                                        <div className="AvarageText">
+                                        <div className="AverageText">
                                             <span>4</span>
                                             <p>Average</p>
                                         </div>
@@ -61,7 +62,7 @@ export default function StudentPage() {
                                 </div>
                             </div>
                             <div className="UserPointsQR">
-
+                                {/* Add QR code content or image here */}
                             </div>
                         </div>
                     </div>
@@ -82,18 +83,18 @@ export default function StudentPage() {
             <div className="StudentsNav">
                 <div className="LeftStudNav">
                     <div className="ButtonBack">
-                        <button>back</button>
+                        <button>Back</button>
                     </div>
                     <div className="ButtonNavigationStud">
                         <button onClick={() => setActiveSection('Profile')}>Profile</button>
-                        <button onClick={() => setActiveSection('Lesson & homework')}>Lesson & homework</button>
+                        <button onClick={() => setActiveSection('Lesson & homework')}>Lesson & Homework</button>
                         <button onClick={() => setActiveSection('Finance')}>Finance</button>
                         <button onClick={() => setActiveSection('History')}>History</button>
                     </div>
                 </div>
                 <div className="RightStudNav">
-                    <button>Add to group</button>
-                    <button>Individual lesson</button>
+                    <button>Add to Group</button>
+                    <button>Individual Lesson</button>
                     <button>...</button>
                 </div>
             </div>
