@@ -1669,3 +1669,97 @@ red {
     font-size: 12px;
     color: #192A3E;
 }
+
+
+.AddLeadModal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: -100px;
+    left: 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.newLeaadCard2 {
+    width: 520px;
+    height: auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 34.9px 8px #00000038;
+    border-radius: 10px;
+    position: relative;
+    padding-top: 40px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.newLeaadCard2 button:nth-child(1) {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    background-color: transparent;
+    border: none;
+    color: #C2CFE0;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.AddLeadModal_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.AddLeadModal_title p:nth-child(1) {
+    font-size: 25px;
+    color: #334D6E;
+    font-weight: 700;
+}
+
+.AddLeadModal_title p:nth-child(2) {
+    font-size: 14px;
+    color: #90A0B7;
+}
+
+.one1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.showMore {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.showMore p {
+    font-size: 12px;
+    color: #707683;
+}
+
+.showMore svg {
+    color: #707683;
+}
+
+.showMore div {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #C2CFE0;
+}
+
+.showMore:hover div  {
+    background-color: #000;
+}

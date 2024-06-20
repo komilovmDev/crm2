@@ -20,6 +20,7 @@ import ModalMake from './../../components/ModalMake/ModalMake';
 import { FaAngleLeft } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
 import LeadCard from './LeadCard';
+import NewLeadModal from './NewLeadModal';
 
 
 
@@ -151,9 +152,16 @@ const Leads = () => {
         setIsOpenModal(!isOpenModal);
     };
 
+    const [newLeadModal , setNewLeadModal] = useState(false)
+
 
     const content = !active ? (
         <div className="LeadsMain">
+            {
+                newLeadModal && (
+                    <NewLeadModal setNewLeadModal={setNewLeadModal}/>
+                )
+            }
             <div className="LeadsMain_table">
                 <button className='topBtn'>New leads</button>
                 <div className="LeadsMain_table_lists">
@@ -420,7 +428,7 @@ const Leads = () => {
                     <div className="LeadsNav_chill_menuBar">
                         <button className="search"><IoSearchSharp /></button>
                         <button className="filter" onClick={() => setIsOpenFilter(!isOpenFilter)}><TbFilter />Filters</button>
-                        {!active && <button className="creted"><FiUser />New lead</button>}
+                        {!active && <button onClick={() => setNewLeadModal(!newLeadModal)} className="creted"><FiUser />New lead</button>}
                         {showButtons && (
                             <div className='ShowButtons'>
                                 <button className="Make" onClick={handleOpenModal}><IoMdCheckmarkCircleOutline />Make a lead</button>
