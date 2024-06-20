@@ -1,0 +1,96 @@
+.StudentsNav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 35.5px 0;
+}
+
+.LeftStudNav {
+    display: flex;
+    padding: 0 20px;
+    gap: 24px;
+}
+
+.RightStudNav {
+    display: flex;
+    padding: 0 20px;
+}
+
+.ButtonBack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #90A0B7;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.ButtonBack button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 15px;
+    color: #90A0B7;
+}
+
+.ButtonBack:hover {
+    border: 1px solid #000;
+}
+
+.ButtonBack:hover button {
+    color: #000;
+}
+
+.ButtonNavigationStud {
+    display: flex;
+}
+
+.ButtonNavigationStud button {
+    width: auto;
+    height: 36px;
+    border: none;
+    border-bottom: 2px solid #90A0B7;
+    background: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #90A0B7;
+    cursor: pointer;
+}
+
+#Profile {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Lesson {
+    width: 156px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Finance {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#History {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
