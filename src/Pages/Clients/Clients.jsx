@@ -964,6 +964,40 @@ export default function Client() {
                                         ))}
                                     </div>
                                 </div>
+                                <div className="slectMenuInfos">
+                                    <div>
+                                        <label htmlFor="">Id</label>
+                                        <p>2716356765</p>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Frist name</label>
+                                        <p>Alisher</p>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Phone number</label>
+                                        <p>+998771141510</p>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Brihday</label>
+                                        <p>29.01.2001</p>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Status</label>
+                                        <p>Active</p>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Birhday</label>
+                                        <p>28.01.2002</p>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Subject</label>
+                                        <p>General English:Beginner</p>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Change date</label>
+                                        <p>11.02.2028</p>
+                                    </div>
+                                </div>
                                 <div className="newLeaadCard_studentMenu1_chil_form_select">
                                     <label htmlFor="">Select tyoe of lesson*</label>
                                     <div className="newLeaadCard_studentMenu1_chil_form_select_inputs">

@@ -786,3 +786,8 @@
     color: #000;
 }
  
+
+.slectMenuInfos {
+    display: grid;
+    grid-template-rows: 4fr 1;
+}
