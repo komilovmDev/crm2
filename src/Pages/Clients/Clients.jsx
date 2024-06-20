@@ -8,12 +8,13 @@ import { FaStar } from "react-icons/fa6";
 import { HiDotsVertical } from "react-icons/hi";
 import { FaAngleLeft } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiUser } from "react-icons/fi";
 import { VscDebugRestart } from "react-icons/vsc";
 import { GoPlus } from "react-icons/go";
 import { TbUser } from "react-icons/tb";
 import { TbUserUp } from "react-icons/tb";
-import { IoCloseOutline } from "react-icons/io5";
+import { IoCloseOutline, IoSearchSharp, } from "react-icons/io5";
+import { IoIosInformationCircleOutline } from 'react-icons/io'
 import React from 'react';
 import LeadCard from '../leads/LeadCard';
 import { FaAngleDown } from "react-icons/fa6";
@@ -320,6 +321,10 @@ export default function Client() {
     };
 
 
+    const [studentMenuStatus, setStudentMenuStatus] = useState(0)
+    const [selectType, setSelectType] = useState(1)
+    const [isOpenSearchData, setIsOpenSearchData] = useState(false);
+
     const renderContent = () => {
         switch (view) {
             case 'All Students':
@@ -339,11 +344,11 @@ export default function Client() {
                         </div>
                         <div className="ClientTable">
                             {clients.map((client, index) => (
-                                <div key={client.id}   className={`GlavTable ${activeRows.includes(client.id) ? 'active' : ''}`} onClick={() => handleRowClick(client.id)} style={{ width: '99%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', border: '1px solid #F8FAFC', borderRight: 'none', borderLeft: 'none', cursor: 'pointer', borderRadius:'6px' }}>
+                                <div key={client.id} className={`GlavTable ${activeRows.includes(client.id) ? 'active' : ''}`} onClick={() => handleRowClick(client.id)} style={{ width: '99%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', border: '1px solid #F8FAFC', borderRight: 'none', borderLeft: 'none', cursor: 'pointer', borderRadius: '6px' }}>
                                     <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={activeRows.includes(client.id)} onChange={(e) => handleRowCheckboxChange(e, client.id)} /> < readOnly /></span>
-                                    <span className='Nomber'><p  style={{ fontSize: '14px', color: '#707683' }}>{client.number}</p></span>
+                                    <span className='Nomber'><p style={{ fontSize: '14px', color: '#707683' }}>{client.number}</p></span>
                                     <span className='Id'><p style={{ fontSize: '14px', color: '#707683' }}>{client.id}</p></span>
-                                    <span className='Name' style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}><p className='Name_P' style={{ fontSize: '14px', display:'flex ', flexDirection:'row', alignItems:'center', gap:'5px' }}>{client.name}<Link className='linktoStudpage' to={'/Student-Page'}><span style={{display:'flex', alignItems:'center', justifyContent:'center'}}><CiShare1 /></span></Link></p><div className="chervon"><p style={{ fontSize: '10px', color: '#707683' }}>{client.age} ({client.dob})</p></div></span>
+                                    <span className='Name' style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}><p className='Name_P' style={{ fontSize: '14px', display: 'flex ', flexDirection: 'row', alignItems: 'center', gap: '5px' }}>{client.name}<Link className='linktoStudpage' to={'/Student-Page'}><span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><CiShare1 /></span></Link></p><div className="chervon"><p style={{ fontSize: '10px', color: '#707683' }}>{client.age} ({client.dob})</p></div></span>
                                     <span className='Points' style={{ justifyContent: 'flex-start', gap: '5px' }}><p style={{ fontSize: '14px', color: '#FFB946', width: '16px' }}><FaStar /></p><div className="chervon"><p style={{ fontSize: '12px', color: '#707683' }}>{client.points}</p></div></span>
                                     <span className='Lesson' style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}><p style={{ fontSize: '14px', color: '#707683' }}>{client.lesson}</p><div className="chervon"><p style={{ fontSize: '10px', color: '#707683' }}>{client.lessonDetail}</p></div></span>
                                     <span className='Status' ><p style={{ width: '47px', height: '19px', borderRadius: '4px', backgroundColor: '#2ED47A', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#FFFFFF' }}>{client.status}</p></span>
@@ -514,160 +519,480 @@ export default function Client() {
                 {renderContent()}
             </div>
             <Modal show={isModalOpen} onClose={handleCloseModal}>
-                {modalContent === 'initial' && (
-                    <div className="ModalNewStud">
-                        <div className="ModalText">
-                            <h1>Add a new student</h1>
-                            <p>How do you want to create a new student?</p>
-                        </div>
-                        <div className="ModalButton">
-                            <div
-                                className={`AddNewStudent ${activeDiv === 'addNewStudent' ? 'active' : ''}`}
-                                onClick={handleAddNewStudent}
-                            >
-                                <div className="IconNewStud"><TbUser /></div>
-                                <div className="AddNewStudText">
-                                    <h1>Add new student</h1>
-                                    <p>Create new student</p>
+                <div className="newLeaadCard_studentMenu" style={{width: '440px'}}>
+                    {
+                        studentMenuStatus == 0 ? (
+                            <div className="newLeaadCard_studentMenu1">
+                                <div className="newLeaadCard_studentMenu_title">
+                                    <h2>Add a new student</h2>
+                                    <p>How do yo want to create a new student?</p>
+                                </div>
+                                <div className="newLeaadCard_studentMenu_Menu">
+                                    <div onClick={() => setStudentMenuStatus(1)} className="newLeaadCard_studentMenu_Menu_btn1">
+                                        <FiUser />
+                                        <div className="newLeaadCard_studentMenu_Menu_btn1_text">
+                                            <p>Add new student</p>
+                                            <span>Create new student</span>
+                                        </div>
+                                    </div>
+                                    <div onClick={() => setStudentMenuStatus(4)} className="newLeaadCard_studentMenu_Menu_btn1">
+                                        <TbUserUp />
+                                        <div className="newLeaadCard_studentMenu_Menu_btn1_text">
+                                            <p>From customer</p>
+                                            <span>Convert customer to student</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div
-                                className={`AddNewCustomer ${activeDiv === 'addNewCustomer' ? 'active' : ''}`}
-                                onClick={handleAddNewCustomer}
-                            >
-                                <div className="IconNewCust"><TbUserUp /></div>
-                                <div className="AddNewCustText">
-                                    <h1>From customer</h1>
-                                    <p>Convert customer to student</p>
+                        ) : studentMenuStatus == 1 ? (
+                            <div className="newLeaadCard_studentMenu1_chil">
+                                <div className="newLeaadCard_studentMenu_title">
+                                    <h2>Add a new student</h2>
+                                    <p>Fill in the requested information below</p>
+                                </div>
+                                <div className="newLeaadCard_studentMenu1_chil_form">
+                                    <div>
+                                        <label htmlFor="">First name*</label>
+                                        <input placeholder="John" type="text" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Last name*</label>
+                                        <input placeholder="Anderson" type="text" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Phone number*</label>
+                                        <input placeholder="+998" type="text" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Brihday*</label>
+                                        <input placeholder="select" type="date" />
+                                    </div>
+                                    <div className="newLeaadCard_studentMenu1_chil_form_select">
+                                        <label htmlFor="">Select tyoe of lesson*</label>
+                                        <div className="newLeaadCard_studentMenu1_chil_form_select_inputs">
+                                            <div>
+                                                <input
+                                                    onChange={() => setSelectType(2)}
+                                                    type="radio"
+                                                    name="lessonType"
+                                                />
+                                                <label htmlFor="">Individual lesson</label>
+                                            </div>
+                                            <div>
+                                                <input
+                                                    onChange={() => setSelectType(3)}
+                                                    type="radio"
+                                                    name="lessonType"
+                                                />
+                                                <label htmlFor="">Group lesson</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="newLeaadCard_studentMenu_Menu_footerBtn">
+                                    <button onClick={() => setStudentMenuStatus(0)}>Go back</button>
+                                    <button onClick={() => setStudentMenuStatus(selectType)}>Next</button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                )}
-                {modalContent === 'addNewStudent' && (
-                    <div className="ModalCreateNewStud">
-                        <div className="CreateNewsTitle">
-                            <h2>Add a new student</h2>
-                            <p>Fill in the requested information below</p>
-                        </div>
-                        <div className="CreateNewsContant">
-                            <label>
-                                <p>First name*</p>
-                                <input name="firstName" placeholder='John' type="text" />
-                            </label>
-                            <label>
-                                <p>Last name*</p>
-                                <input name="lastName" placeholder='Anderson' type="text" />
-                            </label>
-                            <label>
-                                <p>Phone number*</p>
-                                <input name="phoneNumber" placeholder='+998' type="tel" />
-                            </label>
-                            <label className="form-label">
-                                <p>Birthday</p>
-                                <DatePicker
-                                    className='DatePicker'
-                                    selected={startDate}
-                                    onChange={(date) => {
-                                        setStartDate(date);
-                                        handleDropdownSelection(date.toDateString());
-                                    }}
-                                    dateFormat="MMMM d, yyyy"
-                                />
-                            </label>
-                        </div>
-                        <div className="CheckboxNewStud">
-                            <div className="CheckboxNewStud_title">
-                                <p>Select type of lesson*</p>
+                        ) : studentMenuStatus == 2 ? (
+                            <div className="newLeaadCard_studentMenu1_chil">
+                                <div className="newLeaadCard_studentMenu_title">
+                                    <h2>Add a new student</h2>
+                                    <p>Fill in the requested information below</p>
+                                    <p>Create individual lesson for <b>Alisher Atajanov</b></p>
+                                </div>
+                                <div className="newLeaadCard_studentMenu1_chil_form">
+                                    <div>
+                                        <label htmlFor="">Select subject*</label>
+                                        <select name="" id="">
+                                            <option value="">test1</option>
+                                            <option value="">test2</option>
+                                            <option value="">test3</option>
+                                            <option value="">test4</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Select subject*</label>
+                                        <select name="" id="">
+                                            <option value="">test1</option>
+                                            <option value="">test2</option>
+                                            <option value="">test3</option>
+                                            <option value="">test4</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Select subject*</label>
+                                        <select name="" id="">
+                                            <option value="">test1</option>
+                                            <option value="">test2</option>
+                                            <option value="">test3</option>
+                                            <option value="">test4</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Select subject*</label>
+                                        <select name="" id="">
+                                            <option value="">test1</option>
+                                            <option value="">test2</option>
+                                            <option value="">test3</option>
+                                            <option value="">test4</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Select subject*</label>
+                                        <select name="" id="">
+                                            <option value="">test1</option>
+                                            <option value="">test2</option>
+                                            <option value="">test3</option>
+                                            <option value="">test4</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Select subject*</label>
+                                        <select name="" id="">
+                                            <option value="">test1</option>
+                                            <option value="">test2</option>
+                                            <option value="">test3</option>
+                                            <option value="">test4</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Select subject*</label>
+                                        <select name="" id="">
+                                            <option value="">test1</option>
+                                            <option value="">test2</option>
+                                            <option value="">test3</option>
+                                            <option value="">test4</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Select subject*</label>
+                                        <select name="" id="">
+                                            <option value="">test1</option>
+                                            <option value="">test2</option>
+                                            <option value="">test3</option>
+                                            <option value="">test4</option>
+                                        </select>
+                                    </div>
+                                    <div className="newLeaadCard_studentMenu1_chil_form_select">
+                                        <div className="newLeaadCard_studentMenu1_chil_form_select_check">
+                                            <label htmlFor="">Select tyoe of lesson*</label>
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="addCardInfo">
+                                    <div className="addCardInfo1">
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Total number of lesson: </label>
+                                            <span>165</span>
+                                        </div>
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Total study duration:</label>
+                                            <span>6 months</span>
+                                        </div>
+                                    </div>
+                                    <div className="addCardInfo1">
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Start time: </label>
+                                            <span>17:00</span>
+                                        </div>
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">End time</label>
+                                            <span>19:00</span>
+                                        </div>
+                                    </div>
+                                    <div className="addCardInfo1">
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Start day: </label>
+                                            <span>May 15</span>
+                                        </div>
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">End day</label>
+                                            <span>deckaber 15</span>
+                                        </div>
+                                    </div>
+                                    <div className="addCardInfo1">
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Monthly payment: </label>
+                                            <span>200 000 so'm</span>
+                                        </div>
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Monthly discount:</label>
+                                            <span>28 000 so'm</span>
+                                        </div>
+                                    </div>
+                                    <div className="addCardInfo1">
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Monthly payment: </label>
+                                            <span>200 000 so'm</span>
+                                        </div>
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Monthly discount:</label>
+                                            <span>28 000 so'm</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="newLeaadCard_studentMenu_Menu_footerBtn">
+                                    <button onClick={() => setStudentMenuStatus(1)}>Go back</button>
+                                    <button onClick={() => setStudentMenuStatus(2)}>Confrim</button>
+                                </div>
                             </div>
-                            <div className="CheckBox_BOX">
-                                <label>
-                                    <input type="checkbox" name="individualLessons" checked={formData.individualLessons} onChange={handleFormCheckboxChange} />
-                                    <p>Individual lessons</p>
-                                </label>
-                                <label>
-                                    <input type="checkbox" name="groupLessons" checked={formData.groupLessons} onChange={handleFormCheckboxChange} />
-                                    <p>Group lessons</p>
-                                </label>
+                        ) : studentMenuStatus == 3 ? (
+                            <div className="newLeaadCard_studentMenu1_chil">
+                                <div className="newLeaadCard_studentMenu_title">
+                                    <h2>Add a new student</h2>
+                                    <p>Fill in the requested information below</p>
+                                    <p>Select group to add <b>Alisher Atajanov</b></p>
+                                </div>
+                                <div className="newLeaadCard_studentMenu1_chil_form">
+                                    <div>
+                                        <label htmlFor="">Select subject*</label>
+                                        <select name="" id="">
+                                            <option value="">test1</option>
+                                            <option value="">test2</option>
+                                            <option value="">test3</option>
+                                            <option value="">test4</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Select subject*</label>
+                                        <select name="" id="">
+                                            <option value="">test1</option>
+                                            <option value="">test2</option>
+                                            <option value="">test3</option>
+                                            <option value="">test4</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Select subject*</label>
+                                        <select name="" id="">
+                                            <option value="">test1</option>
+                                            <option value="">test2</option>
+                                            <option value="">test3</option>
+                                            <option value="">test4</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Select subject*</label>
+                                        <select name="" id="">
+                                            <option value="">test1</option>
+                                            <option value="">test2</option>
+                                            <option value="">test3</option>
+                                            <option value="">test4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="serachGroup">
+                                    <div className="serachGroupInput">
+                                        <IoSearchSharp />
+                                        <input type="text" placeholder="Type the name of the group" />
+                                    </div>
+                                    <div className="serachGroupMenu">
+                                        <div className="serachGroupMenu_nav">
+                                            <span>
+                                                <p>Group names</p>
+                                                <HiChevronUpDown />
+                                            </span>
+                                            <span>
+                                                <p>Teacher</p>
+                                                <HiChevronUpDown />
+                                            </span>
+                                            <span>
+                                                <p>Time</p>
+                                                <HiChevronUpDown />
+                                            </span>
+                                        </div>
+                                        <div className="serachGroupMenu_menu">
+                                            <div>
+                                                <span>
+                                                    <input type="radio" />
+                                                    <p>General English: Beginner level</p>
+                                                </span>
+                                                <span>
+                                                    <p>Mr.Johnson</p>
+                                                </span>
+                                                <span>
+                                                    <p>TTS - 14:00</p>
+                                                    <IoIosInformationCircleOutline />
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <input type="radio" />
+                                                    <p>General English: Beginner level</p>
+                                                </span>
+                                                <span>
+                                                    <p>Mr.Johnson</p>
+                                                </span>
+                                                <span>
+                                                    <p>TTS - 14:00</p>
+                                                    <IoIosInformationCircleOutline />
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <input type="radio" />
+                                                    <p>General English: Beginner level</p>
+                                                </span>
+                                                <span>
+                                                    <p>Mr.Johnson</p>
+                                                </span>
+                                                <span>
+                                                    <p>TTS - 14:00</p>
+                                                    <IoIosInformationCircleOutline />
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <input type="radio" />
+                                                    <p>General English: Beginner level</p>
+                                                </span>
+                                                <span>
+                                                    <p>Mr.Johnson</p>
+                                                </span>
+                                                <span>
+                                                    <p>TTS - 14:00</p>
+                                                    <IoIosInformationCircleOutline />
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <input type="radio" />
+                                                    <p>General English: Beginner level</p>
+                                                </span>
+                                                <span>
+                                                    <p>Mr.Johnson</p>
+                                                </span>
+                                                <span>
+                                                    <p>TTS - 14:00</p>
+                                                    <IoIosInformationCircleOutline />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="newLeaadCard_studentMenu1_chil_form">
+                                    <div>
+                                        <label htmlFor="">Monthly discount*</label>
+                                        <input type="text" placeholder="Amount" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Select start day*</label>
+                                        <input type="date" />
+                                    </div>
+                                </div>
+                                <div className="newLeaadCard_studentMenu1_chil_form_select">
+                                    <div className="newLeaadCard_studentMenu1_chil_form_select_check">
+                                        <label htmlFor="">Select tyoe of lesson*</label>
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                                <div className="addCardInfo">
+                                    <div className="addCardInfo1">
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Total number of lesson: </label>
+                                            <span>165</span>
+                                        </div>
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Total study duration:</label>
+                                            <span>6 months</span>
+                                        </div>
+                                    </div>
+                                    <div className="addCardInfo1">
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Start time: </label>
+                                            <span>17:00</span>
+                                        </div>
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">End time</label>
+                                            <span>19:00</span>
+                                        </div>
+                                    </div>
+                                    <div className="addCardInfo1">
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Start day: </label>
+                                            <span>May 15</span>
+                                        </div>
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">End day</label>
+                                            <span>deckaber 15</span>
+                                        </div>
+                                    </div>
+                                    <div className="addCardInfo1">
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Monthly payment: </label>
+                                            <span>200 000 so'm</span>
+                                        </div>
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Monthly discount:</label>
+                                            <span>28 000 so'm</span>
+                                        </div>
+                                    </div>
+                                    <div className="addCardInfo1">
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Monthly payment: </label>
+                                            <span>200 000 so'm</span>
+                                        </div>
+                                        <div className="addCardInfo1_chil">
+                                            <label htmlFor="">Monthly discount:</label>
+                                            <span>28 000 so'm</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="newLeaadCard_studentMenu_Menu_footerBtn">
+                                    <button onClick={() => setStudentMenuStatus(1)}>Go back</button>
+                                    <button onClick={() => setStudentMenuStatus(3)}>Confrim</button>
+                                </div>
                             </div>
-                        </div>
-                        <div className="CreateNewStudButtons">
-                            <button className='GoBackStud' onClick={handleGoBack} >
-                                Go back
-                            </button>
-                            <button className='NextStud' onClick={handleNextButtonClick} >
-                                Next
-                            </button>
-                        </div>
-                    </div>
-                )}
-                {modalContent === 'individualLesson' && (
-                    <div className="IndividualLessonContent">
-                        <div className="IndividualLessonContent_Title">
-                            <h2>Add a new student</h2>
-                            <p>Fill in the requested information below</p>
-                        </div>
-                        <div className="IndividualLessonContent_Podtitle">
-                            <p>Create individual lesson for Alisher Atajanov</p>
-                        </div>
-                        <div className="Selec_General_Box">
-                            <div className="IndividualLessonContent_SelectBox">
-                                <div className="Select">
-                                    <p>Select subject*</p>
-                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                        ) : studentMenuStatus == 4 ? (
+                            <div className="newLeaadCard_studentMenu1_chil">
+                                <div className="newLeaadCard_studentMenu_title">
+                                    <h2>Convert customer to student</h2>
+                                    <p>Search for a customer by phone number or name, surname</p>
                                 </div>
-                                <div className="Select">
-                                    <p>Select level*</p>
-                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                                <div className="serach">
+                                    <IoSearchSharp />
+                                    <input onClick={() => setIsOpenSearchData(!isOpenSearchData)} type="text" placeholder="Global search" />
+                                    <div className={isOpenSearchData ? "search_data" : "none"}>
+                                        {[...Array(9)].map((_, index) => (
+                                            <div key={index}>
+                                                <p>Alisher Atajanov</p>
+                                                <p>+998 99 966 73 63</p>
+                                                <p>- 182 000 so'm</p>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                                <div className="Select">
-                                    <p>Select teacher*</p>
-                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                                <div className="newLeaadCard_studentMenu1_chil_form_select">
+                                    <label htmlFor="">Select tyoe of lesson*</label>
+                                    <div className="newLeaadCard_studentMenu1_chil_form_select_inputs">
+                                        <div>
+                                            <input
+                                                onChange={() => setSelectType(2)}
+                                                type="radio"
+                                                name="lessonType"
+                                            />
+                                            <label htmlFor="">Individual lesson</label>
+                                        </div>
+                                        <div>
+                                            <input
+                                                onChange={() => setSelectType(3)}
+                                                type="radio"
+                                                name="lessonType"
+                                            />
+                                            <label htmlFor="">Group lesson</label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="Select">
-                                    <p>Select days*</p>
-                                    <CustomSelect options={options1} initialLabel="Select an option" />
-                                </div>
-                                <div className="Select">
-                                    <p>Select start time*</p>
-                                    <CustomSelect options={options1} initialLabel="Select an option" />
-                                </div>
-                                <div className="Select">
-                                    <p>Select room*</p>
-                                    <CustomSelect options={options1} initialLabel="Select an option" />
-                                </div>
-                                <div className="Select_input">
-                                    <p>Select start day*</p>
-                                    <input placeholder='' type="text" />
-                                </div>
-                                <div className="Select">
-                                    <p>Select start day*</p>
-                                    <CustomSelect options={options1} initialLabel="Select an option" />
+                                <div className="newLeaadCard_studentMenu_Menu_footerBtn">
+                                    <button onClick={() => setStudentMenuStatus(0)}>Go back</button>
+                                    <button onClick={() => setStudentMenuStatus(5)}>Next</button>
                                 </div>
                             </div>
-                        </div>
-                        <div className="IndividualLessonContent_CheckBox">
-                            <input type="checkbox" />
-                            <p>Create a new individual price</p>
-                        </div>
-                        <button onClick={handleGoBack}>Go back</button>
-                        <button>Confim</button>
-                    </div>
-                )}
-                {modalContent === 'groupLesson' && (
-                    <div className="GroupLessonContent">
-                        <button onClick={handleGoBack}>Go back</button>
-                        <h2>Group Lesson</h2>
-                        {/* Add content for group lesson here */}
-                        <p>Content for group lessons</p>
-                    </div>
-                )}
-                {modalContent === 'addNewCustomer' && (
-                    <div className="ModalFromCust">
-                        <button onClick={handleGoBack}>Go back</button>
-                        <h1>Convert Customer to Student Form</h1>
-                    </div>
-                )}
+                        ) : null
+                    }
+                </div>
             </Modal>
         </div >
     );
