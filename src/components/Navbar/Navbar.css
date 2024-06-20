@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;  
+    background-color: #fff;
     border-bottom: .1vw solid #EBEFF2;
     border-left: .1vw solid #EBEFF2;
     font-family: "Poppins", sans-serif;
@@ -26,7 +26,7 @@
     background: none;
     color: #334D6E;
     display: flex;
-    align-items:center;
+    align-items: center;
     cursor: pointer;
     gap: .3vw;
     font-weight: 600;
@@ -42,19 +42,18 @@
     top: 2vw;
     left: 1.5vw;
     display: flex;
-    flex-direction: column;  
-    background-color:white;
-    box-shadow:0 0 .5vw rgba(0, 0, 0, 0.178);
-    border-radius:.5vw;
-    z-index: 10;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 0 .5vw rgba(0, 0, 0, 0.178);
+    border-radius: .5vw;
 }
 
 .DropDownNavButton {
     border: none;
     outline: none;
     background: none;
-    display: flex; 
-    align-items:center;
+    display: flex;
+    align-items: center;
     color: #90A0B7;
     width: 100%;
     height: 1.5vw;
@@ -73,11 +72,11 @@
 }
 
 .DropDownNavButton.activ {
-    color:#005EEB;
+    color: #005EEB;
     font-size: .6vw;
     background-color: #ECF7FF;
 }
- 
+
 .DropDownNavButton.activ .checkButton {
     display: flex;
     font-size: 1vw;
@@ -92,15 +91,15 @@
 
 .GoPlus {
     border: none;
-    display:flex ;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 26px;
     height: 26px;
     font-size: 22px;
-    border-radius:.3vw;
+    border-radius: .3vw;
     background-color: #005EEB;
-    color:#fff;
+    color: #fff;
     font-weight: bold;
     cursor: pointer;
     transition: all .5s ease;
@@ -112,17 +111,19 @@
     background-color: #fff;
 }
 
-.HiLang,.Piclock, .BsArrows {
+.HiLang,
+.Piclock,
+.BsArrows {
     width: 33px;
     height: 33px;
     font-size: 22px;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     border: none;
     background: none;
     outline: none;
-    color:#C2CFE0;
+    color: #C2CFE0;
     cursor: pointer;
     transition: all .5s ease;
 }
@@ -133,30 +134,33 @@
     font-size: 22px;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     border: none;
     background: none;
     outline: none;
-    color:#C2CFE0;
+    color: #C2CFE0;
     cursor: pointer;
     transition: all .5s ease;
 }
 
-.HiLang:hover,.Piclock:hover, .BsArrows:hover, .Notification:hover {
+.HiLang:hover,
+.Piclock:hover,
+.BsArrows:hover,
+.Notification:hover {
     color: #005EEB;
 }
 
 .IoSearch {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     width: 245px;
     height: 40px;
-    border-radius:.5vw;
+    border-radius: .5vw;
     border: .1vw solid #C2CFE04F;
     background: none;
     font-size: .8vw;
-    color:#90A0B7;
+    color: #90A0B7;
     gap: 1vw;
     cursor: pointer;
     background: #F3F4F7;
@@ -168,7 +172,7 @@
     height: 90%;
     display: flex;
     align-items: center;
-    padding: 0 30px;
+    padding: 1px 15px;
     gap: 15px;
     border-left: 2px solid #EBEFF2;
 }
@@ -189,4 +193,200 @@
     color: #90A0B7;
     padding: 0;
     margin: 0;
+}
+
+
+.notficationDrop {
+    position: absolute;
+    width: 390px;
+    height: 550px;
+    background-color: white;
+    z-index: 9;
+    top: 70px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 34.9px 8px #00000038;
+}
+
+
+.notficationDrop .notficationDrop_title {
+    color: #334D6E;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 30px;
+}
+
+.notficationDrop_Messege {
+    height: 82%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    overflow: auto;
+    margin-right: 10px;
+    padding-top: 10px;
+}
+
+.notficationDrop_Messege::-webkit-scrollbar {
+    width: 16px;
+}
+
+.notficationDrop_Messege::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    border: 1px solid #B0C2DA;
+}
+
+.notficationDrop_Messege::-webkit-scrollbar-thumb {
+    background: #B0C2DA;
+    border-radius: 10px;
+    border: 4px solid transparent;
+    /* Creates space around the thumb */
+    background-clip: content-box;
+    /* Ensures the background color stays within the content area */
+}
+
+.notficationDrop_Messege::-webkit-scrollbar-thumb:hover {
+    background: #B0C2DA;
+}
+
+.notficationDrop_Messege_box {
+    width: 330px;
+    height: auto;
+    border: 1px solid #EBEFF5;
+    padding: 10px 0px;
+    padding-left: 20px;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: 0.3s ease;
+}
+
+.notficationDrop_Messege_box:hover {
+    box-shadow: 0px 0px 15px 0px #00000033;
+}
+
+.notficationDrop_Messege_box::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background-color: #90A0B7;
+    top: 10px;
+    left: 10px;
+}
+
+.notficationDrop_Messege_box:hover::after {
+    background-color: #005EEB;
+    transition: 1s ease;
+}
+
+.notficationDrop_Messege_box_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notficationDrop_Messege_box_top h3 {
+    color: #334D6E;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.notficationDrop_Messege_box:hover .notficationDrop_Messege_box_top button {
+    color: #33A9FF;
+    transition: 0.3s ease;
+}
+
+.notficationDrop_Messege_box_top button {
+    border: none;
+    background: none;
+    color: #FFFFFF;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.notficationDrop_Messege_box_min p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #707683;
+    text-align: start;
+}
+
+.notficationDrop_Messege_box_time {
+    color: #90A0B7;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: end;
+    margin-right: 5px;
+}
+
+.Navprofil {
+    cursor: pointer;
+}
+
+.Navprofil:hover {
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.245);
+    border-radius: 5px;
+}
+
+.Navprofil_drop {
+    position: absolute;
+    width: 186px;
+    height: 158px;
+    top: 70px;
+    transform: translateX(-10px);
+    background-color: white;
+    z-index: 99;
+    box-shadow: 0px 0px 7.7px 0px #00000066;
+    border-radius: 6px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1px;
+    background-color: #E4EAF1;
+}
+
+.Navprofil_drop button {
+    width: 100%;
+    flex-grow: 1;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    font-size: 12px;
+    color: #707683;
+    background-color: white;
+    border: none;
+}
+
+.Navprofil_drop button:hover {
+    color: #005EEB;
+    background: #ECF7FF;
+    cursor: pointer;
+}
+
+.Navprofil_drop button:nth-child(1) {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.Navprofil_drop button:nth-child(5) {
+    color: #F7685B;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.Navprofil_drop button:nth-child(5):hover {
+    background: #FEEEED;
+}
+
+.none {
+    display: none;
 }

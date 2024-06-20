@@ -600,7 +600,7 @@ th span {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
-    transform: translateX(-30px); 
+    transform: translateX(-30px);
     gap: 10px;
 }
 
@@ -738,7 +738,7 @@ th span {
     color: #fff;
     outline: none;
 }
- 
+
 
 .LeadsCard_bottomBtns button {
     width: 128px;
@@ -811,4 +811,861 @@ th span {
     color: white;
     background: #005EEB;
     cursor: pointer;
+}
+
+
+.newLeaadCardCon {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.newLeaadCard {
+    width: 550px;
+    height: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 34.9px 8px #00000038;
+    border-radius: 15px;
+    padding: 50px 15px 20px 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.newLeaadCard__Head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #334D6E;
+    letter-spacing: 1%;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.newLeaadCard__Head button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #C2CFE0;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.newLeaadCard__MenuBoxs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.newLeaadCard__MenuBoxs .active {
+    background-color: #005EEB;
+    color: #FFFFFF;
+    border-color: #005EEB;
+}
+
+.newLeaadCard__MenuBox {
+    width: 160px;
+    height: 185px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 2px solid #E4E4E4;
+    cursor: pointer;
+}
+
+.newLeaadCard__MenuBox svg {
+    font-size: 52px;
+    margin-bottom: 20px;
+    color: #005EEB;
+}
+
+.newLeaadCard__MenuBoxs .active svg {
+    color: #FFFFFF;
+}
+
+.newLeaadCard__MenuBox .newLeaadCard__MenuBox_title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18.9px;
+    color: #334D6E;
+}
+
+.newLeaadCard__MenuBox .newLeaadCard__MenuBox_text {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    color: #90A0B7;
+}
+
+.newLeaadCard__MenuBoxs .active .newLeaadCard__MenuBox_title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18.9px;
+    color: #FFFFFF;
+}
+
+.newLeaadCard__MenuBoxs .active .newLeaadCard__MenuBox_text {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.newLeaadCard_paymentMenu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.newLeaadCard_paymentMenu_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newLeaadCard_paymentMenu_title h2 {
+    padding: 0;
+    margin: 0;
+    color: #334D6E;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.newLeaadCard_paymentMenu_title p {
+    color: #90A0B7;
+    font-weight: 400;
+    line-height: 18.9px;
+    letter-spacing: 1%;
+    font-size: 14px;
+}
+
+.newLeaadCard_paymentMenu form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.newLeaadCard_paymentMenu form .serach {
+    width: 440px;
+    height: 45px;
+    margin: 0 auto;
+    border: 1px solid #C2CFE0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newLeaadCard_paymentMenu form .serach svg {
+    margin-left: 80px;
+    color: #90A0B7;
+}
+
+.newLeaadCard_paymentMenu form .serach input {
+    height: 90%;
+    border: none;
+    outline: none;
+}
+
+.newLeaadCard_paymentMenu form .serach input::placeholder {
+    color: #90A0B7;
+    font-size: 12px;
+}
+
+.newLeaadCard_paymentMenu form .select {
+    width: 440px;
+    margin: 0 auto;
+}
+
+.newLeaadCard_paymentMenu form .select label {
+    font-size: 12px;
+    color: #334D6E;
+    margin-bottom: 5px;
+}
+
+.newLeaadCard_paymentMenu form .select select {
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+    color: #334D6E;
+    border: 1px solid #C2CFE0;
+    padding: 0 5px;
+}
+
+.newLeaadCard_paymentMenu form .dataSelect {
+    width: 440px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+}
+
+.newLeaadCard_paymentMenu form .dataSelect div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.newLeaadCard_paymentMenu form .dataSelect div label {
+    font-size: 12px;
+    color: #334D6E;
+    margin-bottom: 5px;
+}
+
+.newLeaadCard_paymentMenu form .dataSelect div div {
+    width: 212px;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #C2CFE0;
+    align-items: center;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.newLeaadCard_paymentMenu form .dataSelect div div svg {
+    padding: 0 10px;
+    color: #334D6E;
+}
+
+.newLeaadCard_paymentMenu form .dataSelect div div input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+}
+
+.newLeaadCard_paymentMenu form .paymentType {
+    width: 440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.newLeaadCard_paymentMenu form .paymentType label {
+    font-size: 12px;
+    color: #334D6E;
+    margin-bottom: 5px;
+}
+
+.newLeaadCard_paymentMenu form .paymentType div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.newLeaadCard_paymentMenu form .paymentType div div {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.newLeaadCard_paymentMenu form .paymentType div div label {
+    color: #707683;
+    font-size: 14px;
+}
+
+.newLeaadCard_paymentMenu form .paymentType div div input {
+    margin-top: -3px;
+}
+
+.newLeaadCard_paymentMenu form .comment {
+    width: 440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.newLeaadCard_paymentMenu form .comment label {
+    font-size: 12px;
+    color: #334D6E;
+    margin-bottom: 5px;
+}
+
+.newLeaadCard_paymentMenu form .comment textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 81px;
+    max-height: 81px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.newLeaadCard_paymentMenu form .comment textarea::placeholder {
+    color: #334D6E;
+}
+
+.newLeaadCard_paymentMenu form .price {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.newLeaadCard_paymentMenu form .price div:nth-child(1) {
+    font-size: 14px;
+    color: #334D6E;
+}
+
+red {
+    color: red;
+}
+
+.newLeaadCard_paymentMenu form .price div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    color: #0000007b;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.footerBtns {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.footerBtns button:nth-child(1) {
+    background: transparent;
+    border: 1px solid #90A0B7;
+    color: #90A0B7;
+    border-radius: 7px;
+    padding: 7px 20px;
+    cursor: pointer;
+}
+
+.footerBtns button:nth-child(2) {
+    color: white;
+    border: none;
+    border-radius: 7px;
+    background: #005EEB;
+    cursor: pointer;
+    padding: 7px 20px;
+}
+
+.search_data {
+    width: 75%;
+    max-height: 200px;
+    margin: 0 auto;
+    position: absolute;
+    transform: translateY(130px);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.503);
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+.search_data div {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0px;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.search_data div:hover {
+    background-color: #E4F4FD;
+    border-radius: 5px;
+}
+
+.search_data div:hover p {
+    color: black;
+}
+
+.search_data div p {
+    font-size: 14px;
+    color: #90A0B7;
+}
+
+/* new lead student add menu */
+
+.newLeaadCard_studentMenu {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.newLeaadCard_studentMenu_title {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.newLeaadCard_studentMenu_title h2 {
+    color: #334D6E;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.newLeaadCard_studentMenu_title p {
+    color: #90A0B7;
+    font-size: 14px;
+}
+
+.newLeaadCard_studentMenu_Menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-bottom: 30px;
+}
+
+.newLeaadCard_studentMenu_Menu_btn1 {
+    width: 210px;
+    height: 60px;
+    border: 1.5px solid #C2CFE0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 10px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.newLeaadCard_studentMenu_Menu_btn1:hover {
+    border: 1.5px solid #005EEB;
+}
+
+.newLeaadCard_studentMenu_Menu_btn1:hover svg {
+    color: #005EEB;
+}
+
+.newLeaadCard_studentMenu_Menu_btn1 svg {
+    color: #33A9FF;
+    font-size: 28px;
+}
+
+.newLeaadCard_studentMenu_Menu_btn1:active {
+    background: #005EEB;
+}
+
+.newLeaadCard_studentMenu_Menu_btn1:active p {
+    color: white;
+}
+
+.newLeaadCard_studentMenu_Menu_btn1:active span {
+    color: white;
+}
+
+.newLeaadCard_studentMenu_Menu_btn1:active svg {
+    color: white;
+}
+
+.newLeaadCard_studentMenu_Menu_btn1_text p {
+    color: #192A3E;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.newLeaadCard_studentMenu_Menu_btn1_text span {
+    color: #192A3E;
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.newLeaadCard_studentMenu_Menu_footerBtn {
+    width: 104%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.newLeaadCard_studentMenu_Menu_footerBtn button {
+    width: 128px;
+    height: 32px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.newLeaadCard_studentMenu_Menu_footerBtn button:nth-child(1) {
+    border: 1px solid #90A0B7;
+    color: #90A0B7;
+    background: transparent;
+}
+
+.newLeaadCard_studentMenu_Menu_footerBtn button:nth-child(2) {
+    border: none;
+    background: #005EEB;
+    color: white;
+}
+
+.newLeaadCard_studentMenu1_chil {
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+.newLeaadCard_studentMenu1_chil::-webkit-scrollbar {
+    z-index: -999;
+    display: none;
+}
+
+.newLeaadCard_studentMenu1_chil_form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+
+.newLeaadCard_studentMenu1_chil_form div {
+    width: 213px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.newLeaadCard_studentMenu1_chil_form div input {
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #C2CFE0;
+}
+
+.newLeaadCard_studentMenu1_chil_form div input:focus {
+    border: 2px solid #005EEB;
+    outline: #005EEB;
+}
+
+
+.newLeaadCard_studentMenu1_chil_form div input {
+    width: 213px;
+    height: 45px;
+}
+
+.newLeaadCard_studentMenu1_chil_form div select {
+    width: 213px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #C2CFE0;
+    color: #707683;
+}
+
+
+.newLeaadCard_studentMenu1_chil_form div label {
+    font-size: 10px;
+}
+
+.newLeaadCard_studentMenu1_chil_form div input[type=radio] {
+    width: 20px;
+    height: 20px;
+}
+
+.newLeaadCard_studentMenu1_chil_form_select {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.newLeaadCard_studentMenu1_chil_form_select .newLeaadCard_studentMenu1_chil_form_select_inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.newLeaadCard_studentMenu1_chil_form_select .newLeaadCard_studentMenu1_chil_form_select_inputs div {
+    min-width: 213px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.newLeaadCard_studentMenu1_chil_form_select .newLeaadCard_studentMenu1_chil_form_select_inputs div label {
+    font-size: 12px;
+    color: #707683;
+}
+
+.newLeaadCard_studentMenu1_chil_form_select .newLeaadCard_studentMenu1_chil_form_select_check {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin-top: -10px;
+}
+
+.newLeaadCard_studentMenu1_chil_form_select .newLeaadCard_studentMenu1_chil_form_select_check input[type=checkbox] {
+    width: 15px;
+}
+
+.addCardInfo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px dashed #707683;
+}
+
+.addCardInfo1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.addCardInfo1_chil label {
+    font-size: 12px;
+    color: #000;
+}
+
+.addCardInfo1_chil span {
+    font-size: 12px;
+    color: #707683;
+}
+
+.newLeaadCard_studentMenu_title p:nth-child(3) {
+    color: #192A3E;
+}
+
+.serachGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.serachGroupInput {
+    width: 440px;
+    height: 45px;
+    background: #F3F4F7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #90A0B7;
+    gap: 5px;
+}
+
+.serachGroupInput input {
+    height: 90%;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.serachGroupInput svg {
+    font-size: 16px;
+}
+
+.serachGroupInput input::placeholder {
+    color: #90A0B7;
+}
+
+.serachGroupMenu {
+    width: 100%;
+    border: 2px solid #EBEFF5;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.serachGroupMenu_nav {
+    display: flex;
+    gap: 10px;
+    border-bottom: 2px solid #EBEFF5;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+}
+
+.serachGroupMenu_nav span {
+    display: flex;
+    align-items: center;
+}
+
+.serachGroupMenu_nav span p {
+    font-size: 12px;
+    color: #707683;
+}
+
+.serachGroupMenu_nav svg {
+    color: #C2CFE0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.serachGroupMenu_nav span:nth-child(1) {
+    width: 40%;
+    justify-content: space-between;
+}
+
+.serachGroupMenu_nav span:nth-child(1) p {
+    transform: translateX(30px);
+}
+
+.serachGroupMenu_nav span:nth-child(2) {
+    width: 30%;
+    justify-content: space-between;
+}
+
+.serachGroupMenu_nav span:nth-child(3) {
+    width: 30%;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.serachGroupMenu_menu {
+    max-height: 180px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Custom scrollbar styles */
+.serachGroupMenu_menu::-webkit-scrollbar {
+    width: 16px;
+    /* Set the width of the scrollbar track */
+}
+
+.serachGroupMenu_menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    border: 1px solid #B0C2DA;
+}
+
+.serachGroupMenu_menu::-webkit-scrollbar-thumb {
+    background: #B0C2DA;
+    border-radius: 10px;
+    border: 4px solid transparent;
+    /* Creates space around the thumb */
+    background-clip: content-box;
+    /* Ensures the background color stays within the content area */
+}
+
+.serachGroupMenu_menu::-webkit-scrollbar-thumb:hover {
+    background: #B0C2DA;
+}
+
+.serachGroupMenu_menu div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.serachGroupMenu_menu div:hover {
+    background-color: #F3F4F7
+}
+
+.serachGroupMenu_menu div span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 5px;
+}
+
+.serachGroupMenu_menu div span svg {
+    color: #C2CFE0;
+}
+
+.serachGroupMenu_menu div span input {
+    width: 25px;
+    height: 25px;
+}
+.serachGroupMenu_menu div span input[type="radio"]:checked+label {
+    color: red;
+}
+.serachGroupMenu_menu div span:nth-child(1) {
+    width: 40%;
+}
+
+.serachGroupMenu_menu div span:nth-child(2) {
+    width: 30%;
+    padding-left: 5px;
+}
+
+.serachGroupMenu_menu div span:nth-child(3) {
+    width: 30%;
+}
+
+
+.serachGroupMenu_menu div span p {
+    font-size: 12px;
+    color: #707683;
+}
+
+
+.newLeaadCard_studentMenu1_chil_form_select_check label {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.newLeaadCard_studentMenu1_chil_form_select_check input {
+    margin-top: 10px;
+}
+
+.newLeaadCard_studentMenu1_chil .serach {
+    width: 440px;
+    height: 45px;
+    margin: 0 auto;
+    border: 1px solid #C2CFE0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newLeaadCard_studentMenu1_chil .serach svg {
+    margin-left: 80px;
+    color: #90A0B7;
+}
+
+.newLeaadCard_studentMenu1_chil  .serach input {
+    height: 90%;
+    border: none;
+    outline: none;
+}
+
+.newLeaadCard_studentMenu1_chil .serach input::placeholder {
+    color: #90A0B7;
+    font-size: 12px;
+}
+
+.newLeaadCard_studentMenu1_chil .newLeaadCard_studentMenu1_chil_form_select {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.newLeaadCard_studentMenu1_chil .newLeaadCard_studentMenu1_chil_form_select label {
+    font-size: 12px;
+    color: #192A3E;
 }
