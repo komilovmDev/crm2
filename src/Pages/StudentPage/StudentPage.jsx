@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import './Studentpage.css';
 import { IoChevronBack } from "react-icons/io5";
 import { TbUserPlus } from "react-icons/tb";
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
+import { LuPlusSquare } from "react-icons/lu";  
+import { Link } from 'react-router-dom';
+import imgs from './../../Assets/e207b97fee7d4c7d854fff1fc5e81cee.jpg';
+import bgimage1 from './../../Assets/Clients/OBJECTSONe.png';
+import bgimage2 from './../../Assets/Clients/OBJECTS.png'; 
 
 export default function StudentPage() {
     const [activeSection, setActiveSection] = useState('Profile');
@@ -14,18 +20,21 @@ export default function StudentPage() {
                         <div className="UserProfile">
                             <div className="UserProfileLeft">
                                 <div className="UserProfileAvatars">
-                                    <img src="path_to_avatar" alt="User Avatar" />
+                                    <img src={imgs} alt="User Avatar" />
                                 </div>
                                 <div className="UserProfileNaming">
                                     <p>Nice to meet you!</p>
                                     <h2>Alisher Atajanov</h2>
                                     <div className="UserProfileStatus">
-                                        <button>Student</button>
-                                        <button>Active</button>
+                                        <button id='Student'>Student</button>
+                                        <button id='Active'>Active</button>
                                     </div>
                                 </div>
                             </div>
                             <div className="UserProfileCard">
+                                <div className="bguserprofilcard"></div>
+                                <div className="bgimage1"><img src={bgimage1} alt="" /></div>
+                                <div className="bgimage2"><img src={bgimage2} alt="" /></div>
                                 <div className="CardId">
                                     <h2>Finance Card</h2>
                                     <p>ID: <span>0989736</span></p>
@@ -85,19 +94,43 @@ export default function StudentPage() {
             <div className="StudentsNav">
                 <div className="LeftStudNav">
                     <div className="ButtonBack">
-                        <button><IoChevronBack /></button>
+                        <Link to={'/Clients'}><button><IoChevronBack /></button></Link>
                     </div>
                     <div className="ButtonNavigationStud">
-                        <button id='Profile' onClick={() => setActiveSection('Profile')}>Profile</button>
-                        <button id='Lesson' onClick={() => setActiveSection('Lesson & homework')}>Lesson & Homework</button>
-                        <button id='Finance' onClick={() => setActiveSection('Finance')}>Finance</button>
-                        <button id='History' onClick={() => setActiveSection('History')}>History</button>
+                        <button 
+                            id='Profile' 
+                            className={activeSection === 'Profile' ? 'active' : ''} 
+                            onClick={() => setActiveSection('Profile')}
+                        >
+                            Profile
+                        </button>
+                        <button 
+                            id='Lesson' 
+                            className={activeSection === 'Lesson & homework' ? 'active' : ''} 
+                            onClick={() => setActiveSection('Lesson & homework')}
+                        >
+                            Lesson & Homework
+                        </button>
+                        <button 
+                            id='Finance' 
+                            className={activeSection === 'Finance' ? 'active' : ''} 
+                            onClick={() => setActiveSection('Finance')}
+                        >
+                            Finance
+                        </button>
+                        <button 
+                            id='History' 
+                            className={activeSection === 'History' ? 'active' : ''} 
+                            onClick={() => setActiveSection('History')}
+                        >
+                            History
+                        </button>
                     </div>
                 </div>
                 <div className="RightStudNav">
-                    <button><span><TbUserPlus /></span>Add to Group</button>
-                    <button>Individual Lesson</button>
-                    <button>...</button>
+                    <button id='Add'><span><TbUserPlus /></span>Add to Group</button>
+                    <button id='Individual'><span><LuPlusSquare /></span>Individual Lesson</button>
+                    <button id='dot'><HiOutlineDotsHorizontal /></button>
                 </div>
             </div>
             <div className="StudentPageHome">
