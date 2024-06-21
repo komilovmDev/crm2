@@ -13,7 +13,7 @@ import StudentPage from './Pages/StudentPage/StudentPage';
 
 function App() {
   const navigate = useNavigate();
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState('dssdda');
 
   useEffect(() => {
     if (!token) {
