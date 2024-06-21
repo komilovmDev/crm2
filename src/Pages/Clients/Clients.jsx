@@ -23,6 +23,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import CustomSelect from '../../components/Seleect/Select';
 import { Link } from 'react-router-dom';
 import { CiShare1 } from "react-icons/ci";
+import { tree } from 'd3';
 
 export default function Client() {
 
@@ -324,6 +325,15 @@ export default function Client() {
     const [studentMenuStatus, setStudentMenuStatus] = useState(0)
     const [selectType, setSelectType] = useState(1)
     const [isOpenSearchData, setIsOpenSearchData] = useState(false);
+    const [isOpenSelectData, setIsOpenSelectData] = useState(false);
+    const [inputValue, setInputValue] = useState("");
+
+    const handleItemClick = (name) => {
+        setInputValue(name);
+        setIsOpenSelectData(true);
+        setIsOpenSearchData(false);
+    };
+
 
     const renderContent = () => {
         switch (view) {
@@ -519,7 +529,7 @@ export default function Client() {
                 {renderContent()}
             </div>
             <Modal show={isModalOpen} onClose={handleCloseModal}>
-                <div className="newLeaadCard_studentMenu" style={{width: '440px'}}>
+                <div className="newLeaadCard_studentMenu" style={{ width: '440px' }}>
                     {
                         studentMenuStatus == 0 ? (
                             <div className="newLeaadCard_studentMenu1">
@@ -953,10 +963,16 @@ export default function Client() {
                                 </div>
                                 <div className="serach">
                                     <IoSearchSharp />
-                                    <input onClick={() => setIsOpenSearchData(!isOpenSearchData)} type="text" placeholder="Global search" />
+                                    <input
+                                        onClick={() => setIsOpenSearchData(!isOpenSearchData)}
+                                        type="text"
+                                        placeholder="Global search"
+                                        value={inputValue}
+                                        readOnly
+                                    />
                                     <div className={isOpenSearchData ? "search_data" : "none"}>
                                         {[...Array(9)].map((_, index) => (
-                                            <div key={index}>
+                                            <div onClick={() => handleItemClick('Alisher Atajanov')} key={index}>
                                                 <p>Alisher Atajanov</p>
                                                 <p>+998 99 966 73 63</p>
                                                 <p>- 182 000 so'm</p>
@@ -964,6 +980,44 @@ export default function Client() {
                                         ))}
                                     </div>
                                 </div>
+                                {
+                                    isOpenSelectData && (
+                                        <div className="selectMenuInfos">
+                                            <div>
+                                                <label htmlFor="">Id:</label>
+                                                <p>2716356765</p>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="">First name:</label>
+                                                <p>Alisher</p>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="">Phone number:</label>
+                                                <p>+998771141510</p>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="">Birthday:</label>
+                                                <p>29.01.2001</p>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="">Status:</label>
+                                                <p>Active</p>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="">Birthday:</label>
+                                                <p>28.01.2002</p>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="">Subject:</label>
+                                                <p>General English: Beginner</p>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="">Change date:</label>
+                                                <p>11.02.2028</p>
+                                            </div>
+                                        </div>
+                                    )
+                                }
                                 <div className="newLeaadCard_studentMenu1_chil_form_select">
                                     <label htmlFor="">Select tyoe of lesson*</label>
                                     <div className="newLeaadCard_studentMenu1_chil_form_select_inputs">
@@ -976,7 +1030,7 @@ export default function Client() {
                                             <label htmlFor="">Individual lesson</label>
                                         </div>
                                         <div>
-                                            <input
+                                            <input5
                                                 onChange={() => setSelectType(3)}
                                                 type="radio"
                                                 name="lessonType"
@@ -987,7 +1041,7 @@ export default function Client() {
                                 </div>
                                 <div className="newLeaadCard_studentMenu_Menu_footerBtn">
                                     <button onClick={() => setStudentMenuStatus(0)}>Go back</button>
-                                    <button onClick={() => setStudentMenuStatus(5)}>Next</button>
+                                    <button onClick={() => setStudentMenuStatus(3)}>Next</button>
                                 </div>
                             </div>
                         ) : null
