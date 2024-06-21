@@ -326,6 +326,14 @@ export default function Client() {
     const [selectType, setSelectType] = useState(1)
     const [isOpenSearchData, setIsOpenSearchData] = useState(false);
     const [isOpenSelectData, setIsOpenSelectData] = useState(false);
+    const [inputValue, setInputValue] = useState("");
+
+    const handleItemClick = (name) => {
+        setInputValue(name);
+        setIsOpenSelectData(true);
+        setIsOpenSearchData(false);
+    };
+
 
     const renderContent = () => {
         switch (view) {
@@ -955,10 +963,16 @@ export default function Client() {
                                 </div>
                                 <div className="serach">
                                     <IoSearchSharp />
-                                    <input onClick={() => setIsOpenSearchData(!isOpenSearchData)} type="text" placeholder="Global search" />
+                                    <input
+                                        onClick={() => setIsOpenSearchData(!isOpenSearchData)}
+                                        type="text"
+                                        placeholder="Global search"
+                                        value={inputValue}
+                                        readOnly
+                                    />
                                     <div className={isOpenSearchData ? "search_data" : "none"}>
                                         {[...Array(9)].map((_, index) => (
-                                            <div onClick={() => setIsOpenSelectData(true) + setIsOpenSearchData(false)} key={index}>
+                                            <div onClick={() => handleItemClick('Alisher Atajanov')} key={index}>
                                                 <p>Alisher Atajanov</p>
                                                 <p>+998 99 966 73 63</p>
                                                 <p>- 182 000 so'm</p>
@@ -1016,7 +1030,7 @@ export default function Client() {
                                             <label htmlFor="">Individual lesson</label>
                                         </div>
                                         <div>
-                                            <input
+                                            <input5
                                                 onChange={() => setSelectType(3)}
                                                 type="radio"
                                                 name="lessonType"
