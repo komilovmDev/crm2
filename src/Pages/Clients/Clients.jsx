@@ -340,7 +340,7 @@ export default function Client() {
             case 'All Students':
                 return (
                     <div className="CliensTables" style={{ display: 'flex', flexDirection: 'column', border: '1px solid #C2CFE0', borderRadius: '14px', background: '#fff', overflow: 'hidden', height: '100%' }}>
-                        <div className="GlavTable" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', borderBottom: '1px solid #C2CFE0', marginBottom: '4px' }}>
+                        <div className="GlavTable scale" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', borderBottom: '1px solid #C2CFE0', marginBottom: '4px' }}>
                             <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={selectAll} onChange={handleSelectAllChange} onClick={(e) => e.stopPropagation()} />  </span>
                             <span className='Nomber'><p>#</p></span>
                             <span className='Id'><p>Id</p><div className="chervon" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><HiChevronUpDown /></div></span>
@@ -354,7 +354,7 @@ export default function Client() {
                         </div>
                         <div className="ClientTable">
                             {clients.map((client, index) => (
-                                <div key={client.id} className={`GlavTable ${activeRows.includes(client.id) ? 'active' : ''}`} onClick={() => handleRowClick(client.id)} style={{ width: '99%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', border: '1px solid #F8FAFC', borderRight: 'none', borderLeft: 'none', cursor: 'pointer', borderRadius: '6px' }}>
+                                <div key={client.id} className={`GlavTable scale ${activeRows.includes(client.id) ? 'active' : ''}`} onClick={() => handleRowClick(client.id)} style={{ width: '99%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', border: '1px solid #F8FAFC', borderRight: 'none', borderLeft: 'none', cursor: 'pointer', borderRadius: '6px' }}>
                                     <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={activeRows.includes(client.id)} onChange={(e) => handleRowCheckboxChange(e, client.id)} /> < readOnly /></span>
                                     <span className='Nomber'><p style={{ fontSize: '14px', color: '#707683' }}>{client.number}</p></span>
                                     <span className='Id'><p style={{ fontSize: '14px', color: '#707683' }}>{client.id}</p></span>
@@ -385,7 +385,7 @@ export default function Client() {
                 );
             case 'Customer Base':
                 return <div className="CliensTables" style={{ display: 'flex', flexDirection: 'column', border: '1px solid #C2CFE0', borderRadius: '14px', background: '#fff', overflow: 'hidden', height: '100%' }}>
-                    <div className="GlavTable" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', borderBottom: '1px solid #C2CFE0', marginBottom: '4px' }}>
+                    <div className="GlavTable scale" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', borderBottom: '1px solid #C2CFE0', marginBottom: '4px' }}>
                         <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={selectAll} onChange={handleSelectAllChange} onClick={(e) => e.stopPropagation()} /> </span>
                         <span className='Nomber'><p>#</p></span>
                         <span className='Id'><p>Id</p><div className="chervon" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><HiChevronUpDown /></div></span>
@@ -398,7 +398,7 @@ export default function Client() {
                     </div>
                     <div className="ClientTable">
                         {clients.map((client, index) => (
-                            <div key={client.id} className={`GlavTable ${activeRows.includes(client.id) ? 'active' : ''}`} onClick={() => handleRowClick(client.id)} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', border: '1px solid #F8FAFC', borderRight: 'none', borderLeft: 'none', cursor: 'pointer', }}>
+                            <div key={client.id} className={`GlavTable scale ${activeRows.includes(client.id) ? 'active' : ''}`} onClick={() => handleRowClick(client.id)} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', border: '1px solid #F8FAFC', borderRight: 'none', borderLeft: 'none', cursor: 'pointer', }}>
                                 <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={activeRows.includes(client.id)} onChange={(e) => handleRowCheckboxChange(e, client.id)} /> < readOnly /></span>
                                 <span className='Nomber'><p style={{ fontSize: '14px', color: '#707683' }}>{client.number}</p></span>
                                 <span className='Id'><p style={{ fontSize: '14px', color: '#707683' }}>{client.id}</p></span>
@@ -427,7 +427,7 @@ export default function Client() {
                 </div>;
             case 'Archive':
                 return <div className="CliensTables" style={{ display: 'flex', flexDirection: 'column', border: '1px solid #C2CFE0', borderRadius: '14px', background: '#fff', overflow: 'hidden', height: '100%' }}>
-                    <div className="GlavTable" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', borderBottom: '1px solid #C2CFE0', marginBottom: '4px' }}>
+                    <div className="GlavTable scale" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', borderBottom: '1px solid #C2CFE0', marginBottom: '4px' }}>
                         <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={selectAll} onChange={handleSelectAllChange} onClick={(e) => e.stopPropagation()} /></span>
                         <span className='Nomber'><p>#</p></span>
                         <span className='Id'><p>Id</p><div className="chervon" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><HiChevronUpDown /></div></span>
@@ -440,7 +440,7 @@ export default function Client() {
                     </div>
                     <div className="ClientTable">
                         {clients.map((client, index) => (
-                            <div key={client.id} className={`GlavTable ${activeRows.includes(client.id) ? 'active' : ''}`} onClick={() => handleRowClick(client.id)} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', border: '1px solid #F8FAFC', borderRight: 'none', borderLeft: 'none', cursor: 'pointer', }}>
+                            <div key={client.id} className={`GlavTable scale ${activeRows.includes(client.id) ? 'active' : ''}`} onClick={() => handleRowClick(client.id)} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: '60px', border: '1px solid #F8FAFC', borderRight: 'none', borderLeft: 'none', cursor: 'pointer', }}>
                                 <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '32px', height: '32px' }}><input type="checkbox" checked={activeRows.includes(client.id)} onChange={(e) => handleRowCheckboxChange(e, client.id)} /> < readOnly /></span>
                                 <span className='Nomber'><p style={{ fontSize: '14px', color: '#707683' }}>{client.number}</p></span>
                                 <span className='Id'><p style={{ fontSize: '14px', color: '#707683' }}>{client.id}</p></span>
