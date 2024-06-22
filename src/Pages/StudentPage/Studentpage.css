@@ -169,9 +169,14 @@
 
 .Profile {
     display: flex;
+    flex-direction: column;
+    padding: 0 20px
+}
+
+.USerProfileOne {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px
 }
 
 
@@ -569,4 +574,81 @@
     font-weight: 400;
     color: #33A9FF;
     font-family: "Poppins", sans-serif; 
+}
+
+.StatsCard {
+    display: flex; 
+    align-items: center;
+    gap: 24px;
+}
+
+.Statsbox {
+    width: 135px;
+    height: 84px;
+    border-radius: 10px;
+    padding: 12px 37px 8px 37px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: #ffffff;
+    gap: 6px;
+}
+
+.boardStats {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.boardStats span {
+    color: #90A0B7;
+    font-size: 16px;
+}
+
+
+.StatsBoxUp {
+    display: flex;
+}
+
+.StatBoxText {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}   
+
+.PropStats {
+    width: 32px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #F1F4F8;
+}
+
+.StatsBoxUp p {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 13.5px;
+    letter-spacing: 1%;
+    font-family: "Poppins", sans-serif; 
+    color: #90A0B7;
+}
+
+.StatBoxText h2 {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 33.75px;
+    letter-spacing: 1%;
+    color: #323C47;
+    font-family: "Poppins", sans-serif; 
+    margin: 0;
+    padding: 0;
+}
+
+.StatBoxText p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    color: #323C47;
 }
