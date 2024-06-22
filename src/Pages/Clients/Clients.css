@@ -188,6 +188,7 @@
     height: 650px;
     overflow-y: auto;
     overflow-x: hidden;
+    gap: 16px;
 }
 
 .GlavTable {
