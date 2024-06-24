@@ -814,6 +814,7 @@
     transform: scale(1.3);
 }
 
+
 @media screen and (max-width: 1440px) {
     .scale {
         transform: scale(1);
