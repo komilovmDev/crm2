@@ -1044,9 +1044,76 @@
 
   .Transaction {
     display: flex;
+    align-items:center;
     gap: 11.6px;
   }
 
   .Transaction span {
     font-size: 20px;
+    color:#F7685B;
+  }
+
+  .Transaction p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    color: #192A3E;
+    font-family: "Poppins", sans-serif;
+    width: 84.41px;
+  }
+
+  .Abount {
+    display: flex;
+    align-items:center;
+  }
+
+  .Abount p {
+    width: 98px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #192A3E;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .TypeP {
+    display: flex;
+    align-items: center;
+  }
+
+  .TypeP p{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    font-family: "Poppins", sans-serif;
+    color: #192A3E;
+    width: 71px;
+  }
+
+  .Cource {
+    display: flex;
+    align-items: center;
+  }
+
+  .Cource p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    font-family: "Poppins", sans-serif;
+    color: #192A3E;
+    width: 108px;
+  }
+
+  .DateP {
+    display: flex;
+    align-items: center;
+  }
+
+  .DateP span {
+    font-size: 15px;
+    color: #90A0B7;
   }

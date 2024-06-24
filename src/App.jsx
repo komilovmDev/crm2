@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   const navigate = useNavigate();
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState('dssdda');
 
   useEffect(() => {
     if (!token) {
