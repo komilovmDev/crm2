@@ -156,6 +156,27 @@ export default function LeadCard({ closeModal }) {
                                             <p className="menuChil_sms_message_box_desck">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quo laborum ipsum quasi pariatur qui possimus tempora esse quidem aliquid?</p>
                                         </div>
                                     </div>
+                                    <div className="menuChil_sms_message_box">
+                                        <h4 className="menuChil_sms_message_date">22.05.2024 02:33</h4>
+                                        <div className="menuChil_sms_message_box_texts">
+                                            <h4 className="menuChil_sms_message_box_title">Jhon Anderson</h4>
+                                            <p className="menuChil_sms_message_box_desck">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quo laborum ipsum quasi pariatur qui possimus tempora esse quidem aliquid?</p>
+                                        </div>
+                                    </div>
+                                    <div className="menuChil_sms_message_box">
+                                        <h4 className="menuChil_sms_message_date">22.05.2024 02:33</h4>
+                                        <div className="menuChil_sms_message_box_texts">
+                                            <h4 className="menuChil_sms_message_box_title">Jhon Anderson</h4>
+                                            <p className="menuChil_sms_message_box_desck">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quo laborum ipsum quasi pariatur qui possimus tempora esse quidem aliquid?</p>
+                                        </div>
+                                    </div>
+                                    <div className="menuChil_sms_message_box">
+                                        <h4 className="menuChil_sms_message_date">22.05.2024 02:33</h4>
+                                        <div className="menuChil_sms_message_box_texts">
+                                            <h4 className="menuChil_sms_message_box_title">Jhon Anderson</h4>
+                                            <p className="menuChil_sms_message_box_desck">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quo laborum ipsum quasi pariatur qui possimus tempora esse quidem aliquid?</p>
+                                        </div>
+                                    </div>
                                 </div>
                                 <button onClick={() => setCommentMenu(2)} className="menuChil_sms_message_sendBtn">Add new comment</button>
                             </div>
@@ -183,7 +204,31 @@ export default function LeadCard({ closeModal }) {
                             <h4 className="menuChil_sms_message_status">Send</h4>
                             <h4 className="menuChil_sms_message_date">22.05.2024 02:33</h4>
                             <div className="menuChil_sms_message_box_texts">
-                                <h4 className="menuChil_sms_message_box_title">Jhon Anderson</h4>
+                                <h4 className="menuChil_sms_message_box_title">Class time has been changed</h4>
+                                <p className="menuChil_sms_message_box_desck">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quo laborum ipsum quasi pariatur qui possimus tempora esse quidem aliquid?</p>
+                            </div>
+                        </div>
+                        <div className="menuChil_sms_message_box">
+                            <h4 className="menuChil_sms_message_status">Send</h4>
+                            <h4 className="menuChil_sms_message_date">22.05.2024 02:33</h4>
+                            <div className="menuChil_sms_message_box_texts">
+                                <h4 className="menuChil_sms_message_box_title">Class time has been changed</h4>
+                                <p className="menuChil_sms_message_box_desck">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quo laborum ipsum quasi pariatur qui possimus tempora esse quidem aliquid?</p>
+                            </div>
+                        </div>
+                        <div className="menuChil_sms_message_box">
+                            <h4 className="menuChil_sms_message_status">Send</h4>
+                            <h4 className="menuChil_sms_message_date">22.05.2024 02:33</h4>
+                            <div className="menuChil_sms_message_box_texts">
+                                <h4 className="menuChil_sms_message_box_title">Class time has been changed</h4>
+                                <p className="menuChil_sms_message_box_desck">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quo laborum ipsum quasi pariatur qui possimus tempora esse quidem aliquid?</p>
+                            </div>
+                        </div>
+                        <div className="menuChil_sms_message_box">
+                            <h4 className="menuChil_sms_message_status">Send</h4>
+                            <h4 className="menuChil_sms_message_date">22.05.2024 02:33</h4>
+                            <div className="menuChil_sms_message_box_texts">
+                                <h4 className="menuChil_sms_message_box_title">Class time has been changed</h4>
                                 <p className="menuChil_sms_message_box_desck">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quo laborum ipsum quasi pariatur qui possimus tempora esse quidem aliquid?</p>
                             </div>
                         </div>
