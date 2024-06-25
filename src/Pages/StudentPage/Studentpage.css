@@ -767,7 +767,7 @@
     display: flex;
     font-family: "Poppins", sans-serif;
     justify-content: flex-start;
-    align-items:center;
+    align-items: center;
     gap: 3px;
 }
 
@@ -799,15 +799,321 @@
     line-height: 16.2px;
     letter-spacing: 1%;
     color: #192A3E;
-} 
+}
 
 #InfoWeb {
     width: 60px;
     height: 19px;
-    border-radius:4px;
-    border:0.5px solid #2ED47A;
+    border-radius: 4px;
+    border: 0.5px solid #2ED47A;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #2ED47A;
 }
+
+.CommentsPayHistory {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.UserComments {
+    width: 520px;
+    height: 500px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #ffffff;
+}
+
+
+.UserCommentContant {
+    width: 501px;
+    height: 372px;
+    padding: 12px 10px 10px 10px;
+    border: 1px solid #EBEFF5;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+}
+
+.UserComTitle {
+    display: flex;
+    gap: 4px;
+}
+
+.UserComTitle p {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    font-family: "Poppins", sans-serif;
+}
+
+.UserComTitle span {
+    font-size: 15px;
+    color: #90A0B7;
+}
+
+.UserCommentBox {
+    width: 453px;
+    height: 76px;
+    border-radius: 8px;
+    border: 1px solid #EBEFF5;
+    padding-left: 12.69px;
+    padding-top: 12px;
+    padding-right: 14px;
+    padding-bottom: 8.65px;
+}
+
+.UserComText {
+    display: flex;
+    flex-direction: column;
+}
+
+.UserComUp {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.UserComUp p {
+    color: #334D6E;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+}
+
+.UserComUp span {
+    font-size: 16px;
+    color: #C2CFE0;
+}
+
+.USerComDuwn {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.USerComDuwn p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    font-family: "Poppins", sans-serif;
+    color: #707683;
+}
+
+.USerComDuwn span {
+    font-size: 10px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    line-height: 13.5px;
+    letter-spacing: 1%;
+    color: #C2CFE0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.UserComText {
+    border-left: 1px solid #90A0B7;
+    padding-left: 8.31px;
+}
+
+.CommentSend {
+    display: flex;
+    align-items: flex-start; /* Изменено для выравнивания textarea и кнопки */
+    width: 100%;
+    height: 56px;
+    overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+  }
+  
+  .CommentSend textarea {
+    width: 448px;
+    height: 100%; /* Задайте нужную высоту */
+    border-radius: 8px;
+    border: 1px solid #EBEFF5;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    padding: 8px; /* Добавляем внутренние отступы */
+    box-sizing: border-box; /* Учитывает padding и border в ширине */
+    resize: none;   /* Переносит длинные слова */
+  }
+  
+  .CommentSend .submit { 
+    height: 100%;
+    background:none;
+    color: #90A0B7;
+    border: none;
+    border-radius: 8px; /* Совпадает с радиусом бордера textarea */
+    cursor: pointer;
+    margin-left: 10px; /* Отступ слева для кнопки */
+    box-sizing: border-box; /* Учитывает padding и border в ширине */
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+  }
+   
+
+  .PayHistory {
+    width: 520px;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .PayHistoryContant {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+  }
+
+  .PayHistoryTitle {
+    display: flex;
+  }
+
+  .PayHistoryTitle p{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    color: #192A3E;
+    font-family: "Poppins", sans-serif;
+  }
+
+  #Transaction {
+    width: 110px;
+    height: 16px;
+    text-align: start;
+    margin-right: 17px;
+  }
+
+  #Amountp {
+    width: 94px;
+    height: 16px;
+    text-align: start;
+  }
+
+  #TypeP {
+    width: 71px;
+    height: 16px;
+    text-align: start;
+    margin-right: 2px;
+  }
+
+  #CourseP {
+    width: 108px;
+    height: 16px;
+    text-align: start;
+    margin-right: 2px;
+  }
+
+  #DateP {
+    width: 62px;
+    height: 16px;
+    text-align: start;
+  }
+
+  .PayContant {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .PayBox {
+    width: 480px;
+    height: 40px;
+    border: 1px solid #EBEFF5;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .Transaction {
+    display: flex;
+    align-items:center;
+    gap: 11.6px;
+  }
+
+  .Transaction span {
+    font-size: 20px;
+    color:#F7685B;
+  }
+
+  .Transaction p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    color: #192A3E;
+    font-family: "Poppins", sans-serif;
+    width: 84.41px;
+  }
+
+  .Abount {
+    display: flex;
+    align-items:center;
+  }
+
+  .Abount p {
+    width: 98px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #192A3E;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .TypeP {
+    display: flex;
+    align-items: center;
+  }
+
+  .TypeP p{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    font-family: "Poppins", sans-serif;
+    color: #192A3E;
+    width: 71px;
+  }
+
+  .Cource {
+    display: flex;
+    align-items: center;
+  }
+
+  .Cource p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16.2px;
+    letter-spacing: 1%;
+    font-family: "Poppins", sans-serif;
+    color: #192A3E;
+    width: 108px;
+  }
+
+  .DateP {
+    display: flex;
+    align-items: center;
+  }
+
+  .DateP span {
+    font-size: 15px;
+    color: #90A0B7;
+  }

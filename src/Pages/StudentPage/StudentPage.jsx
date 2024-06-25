@@ -20,6 +20,11 @@ import { CiCalendar } from "react-icons/ci";
 import { PiHandCoins } from "react-icons/pi";
 import { LuUserSquare2 } from "react-icons/lu";
 import { LiaFileAltSolid } from "react-icons/lia";
+import { CiBookmarkCheck } from "react-icons/ci";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { VscSend } from "react-icons/vsc";
+import { FaChevronDown } from "react-icons/fa";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 
 export default function StudentPage() {
@@ -252,6 +257,104 @@ export default function StudentPage() {
                                         <div className="ContactsRightEmail">
                                             <h3>Adversiting source: </h3>
                                             <p id='InfoWeb'>Web site</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="CommentsPayHistory">
+                            <div className="UserComments">
+                                <div className="UserComTitle">
+                                    <span><CiBookmarkCheck /></span>
+                                    <p>Comments</p>
+                                </div>
+                                <div className="UserCommentContant">
+                                    <div className="UserCommentBox">
+                                        <div className="UserComText">
+                                            <div className="UserComUp">
+                                                <p>John Smith</p>
+                                                <span><BsThreeDotsVertical /></span>
+                                            </div>
+                                            <div className="USerComDuwn">
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                                                <span>02.04.2024  18:42 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="UserCommentBox">
+                                        <div className="UserComText">
+                                            <div className="UserComUp">
+                                                <p>John Smith</p>
+                                                <span><BsThreeDotsVertical /></span>
+                                            </div>
+                                            <div className="USerComDuwn">
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                                                <span>02.04.2024  18:42 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="UserCommentBox">
+                                        <div className="UserComText">
+                                            <div className="UserComUp">
+                                                <p>John Smith</p>
+                                                <span><BsThreeDotsVertical /></span>
+                                            </div>
+                                            <div className="USerComDuwn">
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                                                <span>02.04.2024  18:42 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="UserCommentBox">
+                                        <div className="UserComText">
+                                            <div className="UserComUp">
+                                                <p>John Smith</p>
+                                                <span><BsThreeDotsVertical /></span>
+                                            </div>
+                                            <div className="USerComDuwn">
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                                                <span>02.04.2024  18:42 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="CommentSend">
+                                    <textarea name="" id="" placeholder="Enter your comment"></textarea>
+                                    <button className="submit"><VscSend /></button>
+                                </div>
+                            </div>
+                            <div className="PayHistory">
+                                <div className="UserComTitle">
+                                    <span><CiBookmarkCheck /></span>
+                                    <p>Payments history</p>
+                                </div>
+                                <div className="PayHistoryContant">
+                                    <div className="PayHistoryTitle">
+                                        <p id='Transaction'>Transaction id</p>
+                                        <p id='Amountp'>Amount</p>
+                                        <p id='TypeP'>Type</p>
+                                        <p id='CourseP'>Course</p>
+                                        <p id='DateP'>Date</p>
+                                    </div>
+                                    <div className="PayContant">
+                                        <div className="PayBox">
+                                            <div className="Transaction">
+                                                <span><IoMdCloseCircleOutline /></span>
+                                                <p>125304539</p>
+                                            </div>
+                                            <div className="Abount">
+                                                <p>+ 330 000 so’m</p>
+                                            </div>
+                                            <div className="TypeP">
+                                                <p>Payme</p>
+                                            </div>
+                                            <div className="Cource">
+                                                <p>TTS - 14:00 Mr.Aleksey</p>
+                                            </div>
+                                            <div className="DateP">
+                                                <p>06.05.2024</p>
+                                                <span><FaChevronDown /></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
