@@ -25,6 +25,8 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { VscSend } from "react-icons/vsc";
 import { FaChevronDown } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import { CiCircleCheck } from "react-icons/ci";
+
 
 
 export default function StudentPage() {
@@ -340,6 +342,120 @@ export default function StudentPage() {
                                         <div className="PayBox">
                                             <div className="Transaction">
                                                 <span><IoMdCloseCircleOutline /></span>
+                                                <p>125304539</p>
+                                            </div>
+                                            <div className="Abount">
+                                                <p>+ 330 000 so’m</p>
+                                            </div>
+                                            <div className="TypeP">
+                                                <p>Payme</p>
+                                            </div>
+                                            <div className="Cource">
+                                                <p>TTS - 14:00 Mr.Aleksey</p>
+                                            </div>
+                                            <div className="DateP">
+                                                <p>06.05.2024</p>
+                                                <span><FaChevronDown /></span>
+                                            </div>
+                                        </div>
+                                        <div className="PayBox">
+                                            <div className="Transaction">
+                                                <span id='PayCheck'><CiCircleCheck /></span>
+                                                <p>125304539</p>
+                                            </div>
+                                            <div className="Abount">
+                                                <p>+ 330 000 so’m</p>
+                                            </div>
+                                            <div className="TypeP">
+                                                <p>Payme</p>
+                                            </div>
+                                            <div className="Cource">
+                                                <p>TTS - 14:00 Mr.Aleksey</p>
+                                            </div>
+                                            <div className="DateP">
+                                                <p>06.05.2024</p>
+                                                <span><FaChevronDown /></span>
+                                            </div>
+                                        </div>
+                                        <div className="PayBox">
+                                            <div className="Transaction">
+                                                <span id='PayCheck'><CiCircleCheck /></span>
+                                                <p>125304539</p>
+                                            </div>
+                                            <div className="Abount">
+                                                <p>+ 330 000 so’m</p>
+                                            </div>
+                                            <div className="TypeP">
+                                                <p>Payme</p>
+                                            </div>
+                                            <div className="Cource">
+                                                <p>TTS - 14:00 Mr.Aleksey</p>
+                                            </div>
+                                            <div className="DateP">
+                                                <p>06.05.2024</p>
+                                                <span><FaChevronDown /></span>
+                                            </div>
+                                        </div>
+                                        <div className="PayBox">
+                                            <div className="Transaction">
+                                                <span id='PayCheck'><CiCircleCheck /></span>
+                                                <p>125304539</p>
+                                            </div>
+                                            <div className="Abount">
+                                                <p>+ 330 000 so’m</p>
+                                            </div>
+                                            <div className="TypeP">
+                                                <p>Payme</p>
+                                            </div>
+                                            <div className="Cource">
+                                                <p>TTS - 14:00 Mr.Aleksey</p>
+                                            </div>
+                                            <div className="DateP">
+                                                <p>06.05.2024</p>
+                                                <span><FaChevronDown /></span>
+                                            </div>
+                                        </div>
+                                        <div className="PayBox">
+                                            <div className="Transaction">
+                                                <span id='PayCheck'><CiCircleCheck /></span>
+                                                <p>125304539</p>
+                                            </div>
+                                            <div className="Abount">
+                                                <p>+ 330 000 so’m</p>
+                                            </div>
+                                            <div className="TypeP">
+                                                <p>Payme</p>
+                                            </div>
+                                            <div className="Cource">
+                                                <p>TTS - 14:00 Mr.Aleksey</p>
+                                            </div>
+                                            <div className="DateP">
+                                                <p>06.05.2024</p>
+                                                <span><FaChevronDown /></span>
+                                            </div>
+                                        </div>
+                                        <div className="PayBox">
+                                            <div className="Transaction">
+                                                <span id='PayCheck'><CiCircleCheck /></span>
+                                                <p>125304539</p>
+                                            </div>
+                                            <div className="Abount">
+                                                <p>+ 330 000 so’m</p>
+                                            </div>
+                                            <div className="TypeP">
+                                                <p>Payme</p>
+                                            </div>
+                                            <div className="Cource">
+                                                <p>TTS - 14:00 Mr.Aleksey</p>
+                                            </div>
+                                            <div className="DateP">
+                                                <p>06.05.2024</p>
+                                                <span><FaChevronDown /></span>
+                                            </div>
+                                        </div>
+                                        <div className="PayBox">
+                                            <div className="Transaction">
+                                                <span id='PayCheck'><CiCircleCheck /></span>
                                                 <p>125304539</p>
                                             </div>
                                             <div className="Abount">
