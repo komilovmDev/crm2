@@ -262,7 +262,28 @@ export default function StudentPage() {
             case 'Lesson & homework':
                 return <div>Lesson & Homework Content</div>;
             case 'Finance':
-                return <div>Finance Content</div>;
+                return
+                <div className='stPage_Finance'>
+                    <div className="stPage_Finance_header">
+                        <div className="stPage_Finance_header_box_1">
+                            <div className="stPage_Finance_header_box_1_head">
+                                <p>Profile</p>
+                                <button>Actiive</button>
+                            </div>
+                            <div className="stPage_Finance_header_box_1_infos">
+                                <div>
+                                    <label htmlFor="">Full name</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="stPage_Finance_header_box2">
+
+                        </div>
+                        <div className="stPage_Finance_header_box3">
+
+                        </div>
+                    </div>  
+                </div>;
             case 'History':
                 return <div>History Content</div>;
             default:
