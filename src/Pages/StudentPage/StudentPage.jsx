@@ -26,10 +26,84 @@ import { VscSend } from "react-icons/vsc";
 import { FaChevronDown } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { CiCircleCheck } from "react-icons/ci";
+import { TbEdit } from "react-icons/tb";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { FiPrinter } from "react-icons/fi";
+import { PiCheckCircleBold } from "react-icons/pi";
 
 
 
 export default function StudentPage() {
+    const [dropdownVisible, setDropdownVisible] = useState(Array(7).fill(false));
+
+    const toggleDropdown = (index) => {
+        setDropdownVisible(prev => {
+            const newState = [...prev];
+            newState[index] = !newState[index];
+            return newState;
+        });
+    };
+    const payBoxes = [
+        {
+            id: '125304540',
+            amount: '+ 330 000 so’m',
+            type: 'Payme',
+            course: 'TTS - 14:00 Mr.Aleksey',
+            date: '06.05.2024',
+            transaction: <span><IoMdCloseCircleOutline /></span>
+        },
+        {
+            id: '125304539',
+            amount: '+ 330 000 so’m',
+            type: 'Payme',
+            course: 'TTS - 14:00 Mr.Aleksey',
+            date: '06.05.2024',
+            transaction: <span id='PayCheck'><CiCircleCheck /></span>
+        },
+        {
+            id: '125304539',
+            amount: '+ 330 000 so’m',
+            type: 'Payme',
+            course: 'TTS - 14:00 Mr.Aleksey',
+            date: '06.05.2024',
+            transaction: <span id='PayCheck'><CiCircleCheck /></span>
+        },
+        {
+            id: '125304539',
+            amount: '+ 330 000 so’m',
+            type: 'Payme',
+            course: 'TTS - 14:00 Mr.Aleksey',
+            date: '06.05.2024',
+            transaction: <span id='PayCheck'><CiCircleCheck /></span>
+        },
+        {
+            id: '125304539',
+            amount: '+ 330 000 so’m',
+            type: 'Payme',
+            course: 'TTS - 14:00 Mr.Aleksey',
+            date: '06.05.2024',
+            transaction: <span id='PayCheck'><CiCircleCheck /></span>
+        },
+        {
+            id: '125304539',
+            amount: '+ 330 000 so’m',
+            type: 'Payme',
+            course: 'TTS - 14:00 Mr.Aleksey',
+            date: '06.05.2024',
+            transaction: <span id='PayCheck'><CiCircleCheck /></span>
+        },
+        {
+            id: '125304539',
+            amount: '+ 330 000 so’m',
+            type: 'Payme',
+            course: 'TTS - 14:00 Mr.Aleksey',
+            date: '06.05.2024',
+            transaction: <span id='PayCheck'><CiCircleCheck /></span>
+        },
+
+    ];
+
+
     const [activeSection, setActiveSection] = useState('Profile');
 
     const renderContent = () => {
@@ -339,139 +413,53 @@ export default function StudentPage() {
                                         <p id='DateP'>Date</p>
                                     </div>
                                     <div className="PayContant">
-                                        <div className="PayBox">
-                                            <div className="Transaction">
-                                                <span><IoMdCloseCircleOutline /></span>
-                                                <p>125304539</p>
+                                        {payBoxes.map((payBox, index) => (
+                                            <div key={index}>
+                                                <div className={`PayBox ${dropdownVisible[index] ? 'active' : ''}`} onClick={() => toggleDropdown(index)}>
+                                                    <div className="Transaction">
+                                                        {payBox.transaction}
+                                                        <p>{payBox.id}</p>
+                                                    </div>
+                                                    <div className="Abount">
+                                                        <p>{payBox.amount}</p>
+                                                    </div>
+                                                    <div className="TypeP">
+                                                        <p>{payBox.type}</p>
+                                                    </div>
+                                                    <div className="Cource">
+                                                        <p>{payBox.course}</p>
+                                                    </div>
+                                                    <div className="DateP">
+                                                        <p>{payBox.date}</p>
+                                                        <span><FaChevronDown /></span>
+                                                    </div>
+                                                </div>
+                                                {dropdownVisible[index] && (
+                                                    <div className="DropdownContent">
+                                                        <div className="DropduwnUp">
+                                                            <h4>Transaction’s comment:</h4>
+                                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                                        </div>
+                                                        <div className="DropduwnDuwn">
+                                                            <div className="Duwnright">
+                                                                <button><span><TbEdit /></span><p>Edit</p></button>
+                                                                <button><span><RiDeleteBin6Line /></span><p>Delete</p></button>
+                                                                <button><span><FiPrinter /></span><p>Print check</p></button>
+                                                            </div>
+                                                            <div className="DuwnLeft">
+                                                                <div className="time">
+                                                                    <p>16:33:05 18.05.2024</p>
+                                                                </div>
+                                                                <div className="DuwnRight">
+                                                                    <span><PiCheckCircleBold /></span>
+                                                                    <p>Successful</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
                                             </div>
-                                            <div className="Abount">
-                                                <p>+ 330 000 so’m</p>
-                                            </div>
-                                            <div className="TypeP">
-                                                <p>Payme</p>
-                                            </div>
-                                            <div className="Cource">
-                                                <p>TTS - 14:00 Mr.Aleksey</p>
-                                            </div>
-                                            <div className="DateP">
-                                                <p>06.05.2024</p>
-                                                <span><FaChevronDown /></span>
-                                            </div>
-                                        </div>
-                                        <div className="PayBox">
-                                            <div className="Transaction">
-                                                <span id='PayCheck'><CiCircleCheck /></span>
-                                                <p>125304539</p>
-                                            </div>
-                                            <div className="Abount">
-                                                <p>+ 330 000 so’m</p>
-                                            </div>
-                                            <div className="TypeP">
-                                                <p>Payme</p>
-                                            </div>
-                                            <div className="Cource">
-                                                <p>TTS - 14:00 Mr.Aleksey</p>
-                                            </div>
-                                            <div className="DateP">
-                                                <p>06.05.2024</p>
-                                                <span><FaChevronDown /></span>
-                                            </div>
-                                        </div>
-                                        <div className="PayBox">
-                                            <div className="Transaction">
-                                                <span id='PayCheck'><CiCircleCheck /></span>
-                                                <p>125304539</p>
-                                            </div>
-                                            <div className="Abount">
-                                                <p>+ 330 000 so’m</p>
-                                            </div>
-                                            <div className="TypeP">
-                                                <p>Payme</p>
-                                            </div>
-                                            <div className="Cource">
-                                                <p>TTS - 14:00 Mr.Aleksey</p>
-                                            </div>
-                                            <div className="DateP">
-                                                <p>06.05.2024</p>
-                                                <span><FaChevronDown /></span>
-                                            </div>
-                                        </div>
-                                        <div className="PayBox">
-                                            <div className="Transaction">
-                                                <span id='PayCheck'><CiCircleCheck /></span>
-                                                <p>125304539</p>
-                                            </div>
-                                            <div className="Abount">
-                                                <p>+ 330 000 so’m</p>
-                                            </div>
-                                            <div className="TypeP">
-                                                <p>Payme</p>
-                                            </div>
-                                            <div className="Cource">
-                                                <p>TTS - 14:00 Mr.Aleksey</p>
-                                            </div>
-                                            <div className="DateP">
-                                                <p>06.05.2024</p>
-                                                <span><FaChevronDown /></span>
-                                            </div>
-                                        </div>
-                                        <div className="PayBox">
-                                            <div className="Transaction">
-                                                <span id='PayCheck'><CiCircleCheck /></span>
-                                                <p>125304539</p>
-                                            </div>
-                                            <div className="Abount">
-                                                <p>+ 330 000 so’m</p>
-                                            </div>
-                                            <div className="TypeP">
-                                                <p>Payme</p>
-                                            </div>
-                                            <div className="Cource">
-                                                <p>TTS - 14:00 Mr.Aleksey</p>
-                                            </div>
-                                            <div className="DateP">
-                                                <p>06.05.2024</p>
-                                                <span><FaChevronDown /></span>
-                                            </div>
-                                        </div>
-                                        <div className="PayBox">
-                                            <div className="Transaction">
-                                                <span id='PayCheck'><CiCircleCheck /></span>
-                                                <p>125304539</p>
-                                            </div>
-                                            <div className="Abount">
-                                                <p>+ 330 000 so’m</p>
-                                            </div>
-                                            <div className="TypeP">
-                                                <p>Payme</p>
-                                            </div>
-                                            <div className="Cource">
-                                                <p>TTS - 14:00 Mr.Aleksey</p>
-                                            </div>
-                                            <div className="DateP">
-                                                <p>06.05.2024</p>
-                                                <span><FaChevronDown /></span>
-                                            </div>
-                                        </div>
-                                        <div className="PayBox">
-                                            <div className="Transaction">
-                                                <span id='PayCheck'><CiCircleCheck /></span>
-                                                <p>125304539</p>
-                                            </div>
-                                            <div className="Abount">
-                                                <p>+ 330 000 so’m</p>
-                                            </div>
-                                            <div className="TypeP">
-                                                <p>Payme</p>
-                                            </div>
-                                            <div className="Cource">
-                                                <p>TTS - 14:00 Mr.Aleksey</p>
-                                            </div>
-                                            <div className="DateP">
-                                                <p>06.05.2024</p>
-                                                <span><FaChevronDown /></span>
-                                            </div>
-                                        </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
@@ -501,7 +489,7 @@ export default function StudentPage() {
                         <div className="stPage_Finance_header_box3">
 
                         </div>
-                    </div>  
+                    </div>
                 </div>;
             case 'History':
                 return <div>History Content</div>;
